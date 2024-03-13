@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Risk of getting Railed.sln"
+    "dotnet.defaultSolution": "Risk of Getting Railed.sln"
 }
