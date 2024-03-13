@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BattleHud_0: 1858726451671550953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

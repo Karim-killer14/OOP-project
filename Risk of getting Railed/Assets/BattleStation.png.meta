@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BattleStation_0: 2835895738337585019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
