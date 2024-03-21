@@ -1,14 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour
-{
-    public void playGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+public class MainMenu : MonoBehaviour {
+    public void playGame() {
+        SceneManager.LoadScene(2);
     }
 
-    public void QuitGame()
-    {
+    public void QuitGame() {
         Debug.Log("QUIT!");
         Application.Quit();
     }

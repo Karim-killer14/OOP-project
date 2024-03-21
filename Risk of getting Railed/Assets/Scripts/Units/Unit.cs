@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
     [SerializeField] float dmgReduction = 0;
+    public Move[] moves;
     private float currentHP;
     private float maxHP;
 
@@ -28,7 +29,7 @@ public class Unit : MonoBehaviour {
         animator.SetTrigger("takeHit");
         CurrentHP -= dmg - (dmgReduction * dmg);
 
-        if(CurrentHP <= 0) animator.SetTrigger("dead");
+        if (CurrentHP <= 0) animator.SetTrigger("dead");
     }
 
     public void Heal(float amount, float maxHP) {
@@ -38,12 +39,12 @@ public class Unit : MonoBehaviour {
         }
     }
 
-    public virtual void Attack(int attackID, float damage  = 0) {
+    public virtual void Attack(int attackID, float damage = 0) {
         animator.SetTrigger($"attack{attackID}");
         enemy.TakeDamage(damage);
     }
 
-    public virtual void Heal(float amount){
+    public virtual void Heal(float amount) {
         currentHP += amount;
     }
 }
