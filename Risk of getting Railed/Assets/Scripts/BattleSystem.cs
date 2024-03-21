@@ -1,13 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
 public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject moveBtnPrefab;
+    [SerializeField] Transform movesHolder;
 
     private Vector2 PLAYER_POSITION = new(-4.39f, -2.14f);
     private Vector2 ENEMY_POSITION = new(5.89f, -3.1f);
@@ -37,6 +39,7 @@ public class BattleSystem : MonoBehaviour {
         playerUnit.enemy = enemyUnit;
         playerUnit.animator = playerUnit.GetComponent<Animator>();
 
+        LoadPlayerMoves();
         enemyUnit.enemy = playerUnit;
         enemyUnit.animator = enemyUnit.GetComponent<Animator>();
 
@@ -78,33 +81,38 @@ public class BattleSystem : MonoBehaviour {
         SwitchTurns();
     }
 
+    void LoadPlayerMoves() {
+        foreach (Move move in playerUnit.moves) {
+            GameObject Obj = Instantiate(moveBtnPrefab);
+            Obj.transform.SetParent(movesHolder);
+            TextMeshProUGUI txt = Obj.GetComponentInChildren<TextMeshProUGUI>();
+            if (txt) txt.text = $"{move.attackName}";
+            
+            Button btn = Obj.GetComponent<Button>();
+            btn.onClick.AddListener(() => {
+                Debug.Log($"{move.attackName} WAS PRESSED");
+                move.Perform();
+            });
+        }
 
-    IEnumerator PlayerHeal() {
-        // playerUnit.Heal(15, playerUnit.MaxHP);
-
-        // playerHUD.SetHP(playerUnit.CurrentHP);
-        yield return new WaitForSeconds(2f);
-
-        // state = BattleState.ENEMYTURN;
-        // StartCoroutine(EnemyTurn());
     }
 
 
-    public void OnAttackButton() {
-        if (state != BattleState.PLAYERTURN)
-            return;
+    // public void OnAttackButton() {
+    //     if (state != BattleState.PLAYERTURN)
+    //         return;
 
-        playerUnit.Attack(0);
-        enemyHUD.SetHP(enemyUnit.CurrentHP);
-        SwitchTurns();
-    }
+    //     playerUnit.Attack(0);
+    //     enemyHUD.SetHP(enemyUnit.CurrentHP);
+    //     SwitchTurns();
+    // }
 
-    public void OnHealButton() {
-        if (state != BattleState.PLAYERTURN)
-            return;
+    // public void OnHealButton() {
+    //     if (state != BattleState.PLAYERTURN)
+    //         return;
 
-        playerUnit.Heal(100);
-        playerHUD.SetHP(playerUnit.CurrentHP);
-        SwitchTurns();
-    }
+    //     playerUnit.Heal(100);
+    //     playerHUD.SetHP(playerUnit.CurrentHP);
+    //     SwitchTurns();
+    // }
 }
