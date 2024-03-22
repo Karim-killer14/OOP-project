@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Unit : MonoBehaviour {
@@ -19,10 +20,7 @@ public class Unit : MonoBehaviour {
 
     public float CurrentHP {
         get { return currentHP; }
-        set {
-            currentHP = value;
-            if (currentHP <= 0) currentHP = 0;
-        }
+        set { currentHP = math.min(math.max(currentHP, 0), maxHP); }
     }
 
     public void TakeDamage(float dmg) {
@@ -30,21 +28,5 @@ public class Unit : MonoBehaviour {
         CurrentHP -= dmg - (dmgReduction * dmg);
 
         if (CurrentHP <= 0) animator.SetTrigger("dead");
-    }
-
-    public void Heal(float amount, float maxHP) {
-        CurrentHP += amount;
-        if (CurrentHP > maxHP) {
-            CurrentHP = maxHP;
-        }
-    }
-
-    public virtual void Attack(int attackID, float damage = 0) {
-        animator.SetTrigger($"attack{attackID}");
-        enemy.TakeDamage(damage);
-    }
-
-    public virtual void Heal(float amount) {
-        currentHP += amount;
     }
 }

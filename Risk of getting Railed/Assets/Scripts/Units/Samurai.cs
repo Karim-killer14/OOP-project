@@ -10,15 +10,4 @@ public class Samurai : Unit {
         moves[0] = new LightSwing();
         moves[1] = new Heal();
     }
-
-    public override void Attack(int attackID, float damage = 0) {
-        if (attackID == 0) damage = 10; // light swing
-        else if (attackID == 1) damage = 30; // heavy swing
-
-        base.Attack(attackID, damage);
-    }
-
-    public override void Heal(float amount) {
-        base.Heal(amount);
-    }
 }

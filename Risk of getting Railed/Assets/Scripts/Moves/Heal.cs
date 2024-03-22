@@ -1,14 +1,12 @@
 using UnityEngine;
 
 public class Heal : Move {
-    public Heal() : base("Heal", 0, 00) {}
+    public Heal() : base("Heal", "heal", 0, 10) { }
 
-    public override bool Perform() {
-        if (!base.Perform()) return false;
+    public override bool Perform(Unit performer) {
+        if (!base.Perform(performer)) return false;
 
-        Debug.Log($"Performing {this.attackName}");
-        // todo healing swing code here
-        
+        performer.CurrentHP += heal;
         return true;
     }
 }

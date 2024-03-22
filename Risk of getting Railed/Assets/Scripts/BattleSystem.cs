@@ -67,6 +67,9 @@ public class BattleSystem : MonoBehaviour {
     }
 
     private void SwitchTurns() {
+        enemyHUD.SetHP(enemyUnit.CurrentHP);
+        playerHUD.SetHP(playerUnit.CurrentHP);
+
         if (enemyUnit.CurrentHP <= 0) state = BattleState.WON;
         else if (playerUnit.CurrentHP <= 0) state = BattleState.LOST;
         else state = state == BattleState.PLAYERTURN ? BattleState.ENEMYTURN : BattleState.PLAYERTURN;
@@ -76,7 +79,8 @@ public class BattleSystem : MonoBehaviour {
     IEnumerator EnemyTurn() {
         // todo add some ai stuff or randomization for the attack id here
         yield return new WaitForSeconds(1f);
-        enemyUnit.Attack(0);
+        Debug.Log("ENEMY ATTACKED BROOOOOO0O LETS FRICKEN GO");
+        // enemyUnit.Attack(0);
         playerHUD.SetHP(playerUnit.CurrentHP);
         SwitchTurns();
     }
@@ -87,32 +91,16 @@ public class BattleSystem : MonoBehaviour {
             Obj.transform.SetParent(movesHolder);
             TextMeshProUGUI txt = Obj.GetComponentInChildren<TextMeshProUGUI>();
             if (txt) txt.text = $"{move.attackName}";
-            
+
             Button btn = Obj.GetComponent<Button>();
             btn.onClick.AddListener(() => {
-                Debug.Log($"{move.attackName} WAS PRESSED");
-                move.Perform();
+                if (state != BattleState.PLAYERTURN)
+                    return;
+
+                move.Perform(playerUnit);
+                SwitchTurns();
             });
         }
 
     }
-
-
-    // public void OnAttackButton() {
-    //     if (state != BattleState.PLAYERTURN)
-    //         return;
-
-    //     playerUnit.Attack(0);
-    //     enemyHUD.SetHP(enemyUnit.CurrentHP);
-    //     SwitchTurns();
-    // }
-
-    // public void OnHealButton() {
-    //     if (state != BattleState.PLAYERTURN)
-    //         return;
-
-    //     playerUnit.Heal(100);
-    //     playerHUD.SetHP(playerUnit.CurrentHP);
-    //     SwitchTurns();
-    // }
 }
