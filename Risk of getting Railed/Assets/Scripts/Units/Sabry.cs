@@ -4,6 +4,6 @@ using UnityEngine;
 public class Sabry : Unit {
     private void Awake() {
         UnitName = "Sabry";
-        MaxHP = 100;
+        MaxHP = 10000000000;
     }
 }

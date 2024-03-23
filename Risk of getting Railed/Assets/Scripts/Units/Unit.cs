@@ -20,7 +20,10 @@ public class Unit : MonoBehaviour {
 
     public float CurrentHP {
         get { return currentHP; }
-        set { currentHP = math.min(math.max(currentHP, 0), maxHP); }
+        set {
+            currentHP = value;
+            currentHP = math.min(math.max(currentHP, 0), MaxHP);
+        }
     }
 
     public void TakeDamage(float dmg) {
@@ -28,5 +31,11 @@ public class Unit : MonoBehaviour {
         CurrentHP -= dmg - (dmgReduction * dmg);
 
         if (CurrentHP <= 0) animator.SetTrigger("dead");
+    }
+
+    public virtual void IncrementCooldown() {
+        foreach (var move in moves) {
+            move.Cooldown++;
+        }
     }
 }

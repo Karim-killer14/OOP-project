@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Heal : Move {
-    public Heal() : base("Heal", "heal", 3, 0, 10) { }
+public class HeavySwing : Move {
+    public HeavySwing() : base("Heavy Swing", "heavySwing", 5, 90, 0) { }
 
     public override bool Perform(Unit performer) {
         if (!base.Perform(performer)) return false;
 
-        performer.CurrentHP += heal;
+        performer.enemy.TakeDamage(damage);
         return true;
     }
 }

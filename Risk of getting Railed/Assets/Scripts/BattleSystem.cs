@@ -97,7 +97,9 @@ public class BattleSystem : MonoBehaviour {
                 if (state != BattleState.PLAYERTURN)
                     return;
 
-                move.Perform(playerUnit);
+                if (!move.Perform(playerUnit)) return;
+
+                playerUnit.IncrementCooldown();
                 SwitchTurns();
             });
         }
