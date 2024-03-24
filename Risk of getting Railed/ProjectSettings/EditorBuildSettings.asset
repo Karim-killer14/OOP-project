@@ -12,10 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: e0fe43ff0e4303247bb22c9f045ce34a
   - enabled: 1
+    path: Assets/Scenes/LevelsScene.unity
+    guid: 88118a90784d7b648a2305a534e42f57
+  - enabled: 1
     path: Assets/Scenes/Stages/Stage1.unity
     guid: 806be19dee0af2942bfac6dda45f6231
   - enabled: 1
-    path: Assets/Scenes/LevelsScene.unity
-    guid: 88118a90784d7b648a2305a534e42f57
+    path: Assets/Scenes/Stages/Stage2.unity
+    guid: 4041511fe7e05134e82793bf7729e3bb
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

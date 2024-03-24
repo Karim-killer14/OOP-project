@@ -9,6 +9,9 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject moveBtnPrefab;
+    [SerializeField] GameObject WinScreen;//
+    [SerializeField] GameObject LoseScreen;
+    [SerializeField] GameObject MainGUI;
     [SerializeField] Transform movesHolder;
 
     private Vector2 PLAYER_POSITION = new(-4.39f, -2.14f);
@@ -56,13 +59,12 @@ public class BattleSystem : MonoBehaviour {
             // todo ungrey the buttons
         }
         else if (state == BattleState.LOST) {
-            Debug.Log("TODO HANDLE LOSING");
-
-            state = BattleState.WAIT;
+            MainGUI.SetActive(false);
+            LoseScreen.SetActive(true);
         }
         else if (state == BattleState.WON) {
-            Debug.Log("TODO HANDLE WINNING");
-            state = BattleState.WAIT;
+            MainGUI.SetActive(false);
+            WinScreen.SetActive(true);
         }
     }
 
@@ -80,7 +82,8 @@ public class BattleSystem : MonoBehaviour {
         // todo add some ai stuff or randomization for the attack id here
         yield return new WaitForSeconds(1f);
         Debug.Log("ENEMY ATTACKED BROOOOOO0O LETS FRICKEN GO");
-        // enemyUnit.Attack(0);
+        playerUnit.TakeDamage(100);
+
         playerHUD.SetHP(playerUnit.CurrentHP);
         SwitchTurns();
     }
