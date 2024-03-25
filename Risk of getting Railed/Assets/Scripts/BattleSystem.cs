@@ -79,12 +79,10 @@ public class BattleSystem : MonoBehaviour {
 
 
     IEnumerator EnemyTurn() {
-        // todo add some ai stuff or randomization for the attack id here
         yield return new WaitForSeconds(1f);
-        Debug.Log("ENEMY ATTACKED BROOOOOO0O LETS FRICKEN GO");
-        playerUnit.TakeDamage(100);
+        enemyUnit.aiAttack();
+        enemyUnit.IncrementCooldown();
 
-        playerHUD.SetHP(playerUnit.CurrentHP);
         SwitchTurns();
     }
 

@@ -23,8 +23,10 @@ public class Move : MonoBehaviour {
         this.Cooldown = cooldownLimit;
     }
 
+    public bool CanUse() { return Cooldown >= cooldownLimit; }
+
     public virtual bool Perform(Unit performer) {
-        if (Cooldown >= cooldownLimit) {
+        if (CanUse()) {
             performer.animator.SetTrigger(animName);
             Cooldown = -1;
             return true;
