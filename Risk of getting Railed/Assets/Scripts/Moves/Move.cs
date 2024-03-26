@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
     public string attackName;
-    public float damage;
-    public float heal;
-    protected string animName;
     protected int cooldownLimit;
     private int cooldown;
     public int Cooldown {
@@ -14,11 +11,8 @@ public class Move : MonoBehaviour {
         set { cooldown = value; cooldown = math.min(cooldown, cooldownLimit); }
     }
 
-    public Move(string attackName, string animName, int cooldownLimit, float damage, float heal) {
+    public Move(string attackName, int cooldownLimit) {
         this.attackName = attackName;
-        this.animName = animName;
-        this.damage = damage;
-        this.heal = heal;
         this.cooldownLimit = cooldownLimit;
         this.Cooldown = cooldownLimit;
     }
@@ -27,7 +21,7 @@ public class Move : MonoBehaviour {
 
     public virtual bool Perform(Unit performer) {
         if (CanUse()) {
-            performer.animator.SetTrigger(animName);
+            performer.animator.SetTrigger(attackName);
             Cooldown = -1;
             return true;
         }

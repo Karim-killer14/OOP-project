@@ -13,7 +13,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject MainGUI;
     [SerializeField] Transform movesHolder;
-    [SerializeField] float ground = -3.5f;
+    [SerializeField] float ground = -4f;
 
     private Vector2 PLAYER_POSITION = new(-5, 0);
     private Vector2 ENEMY_POSITION = new(5, 0);
@@ -84,6 +84,7 @@ public class BattleSystem : MonoBehaviour {
     IEnumerator EnemyTurn() {
         yield return new WaitForSeconds(1f);
         enemyUnit.aiAttack();
+        yield return new WaitForSeconds(1f);
         enemyUnit.IncrementCooldown();
 
         SwitchTurns();

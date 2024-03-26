@@ -326,6 +326,7 @@ MonoBehaviour:
   LoseScreen: {fileID: 560303301}
   MainGUI: {fileID: 1161125742}
   movesHolder: {fileID: 2131801426}
+  ground: -4
   playerHUD: {fileID: 917671622}
   enemyHUD: {fileID: 36520570}
   state: 0
