@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour {
@@ -6,6 +7,7 @@ public class Unit : MonoBehaviour {
     public Move[] moves;
     private float currentHP;
     private float maxHP;
+    private float currentSH;
 
     public Unit enemy;
     public Animator animator;
@@ -17,7 +19,15 @@ public class Unit : MonoBehaviour {
             maxHP = currentHP = value;
         }
     }
-
+    public float CurrentSH
+    {
+        get { return currentSH; }
+        set
+        {
+            currentSH = value;
+            Debug.Log($"SH value ={currentSH}");
+        }
+    }
     public float CurrentHP {
         get { return currentHP; }
         set {
@@ -27,9 +37,17 @@ public class Unit : MonoBehaviour {
     }
 
     public void TakeDamage(float dmg) {
-        animator.SetTrigger("takeHit");
-        CurrentHP -= dmg - (dmgReduction * dmg);
+        if (CurrentSH >= dmg)
+        {
+            CurrentSH -= dmg;
+        }
 
+        else if (dmg > CurrentSH)
+        {
+            float totdmg = dmg - CurrentSH;
+            animator.SetTrigger("takeHit");
+            CurrentHP -= totdmg - (dmgReduction * totdmg);
+        }
         if (CurrentHP <= 0) animator.SetTrigger("dead");
     }
 
