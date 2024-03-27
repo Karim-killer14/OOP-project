@@ -6,7 +6,6 @@ public class Move : MonoBehaviour {
     public string attackName;
     protected int cooldownLimit;
     private int cooldown;
-    public float shield;
     public int Cooldown {
         get { return cooldown; }
         set { cooldown = value; cooldown = math.min(cooldown, cooldownLimit); }
@@ -16,7 +15,6 @@ public class Move : MonoBehaviour {
         this.attackName = attackName;
         this.cooldownLimit = cooldownLimit;
         this.Cooldown = cooldownLimit;
-        this.shield = shield;
     }
 
     public bool CanUse() { return Cooldown >= cooldownLimit; }
