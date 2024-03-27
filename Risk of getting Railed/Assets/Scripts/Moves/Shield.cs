@@ -2,7 +2,7 @@
 
 public class Shield : Move
 {
-    public Shield() : base("Shield", "heal", 0, 0, 0,100) { }
+    public Shield() : base("Shield",100) { }
 
     public override bool Perform(Unit performer)
     {
