@@ -9,13 +9,14 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject moveBtnPrefab;
-    [SerializeField] GameObject WinScreen;//
+    [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject MainGUI;
     [SerializeField] Transform movesHolder;
+    [SerializeField] float ground = -4f;
 
-    private Vector2 PLAYER_POSITION = new(-4.39f, -2.14f);
-    private Vector2 ENEMY_POSITION = new(5.89f, -3.1f);
+    private Vector2 PLAYER_POSITION = new(-5, 0);
+    private Vector2 ENEMY_POSITION = new(5, 0);
 
     private Unit playerUnit;
     private Unit enemyUnit;
@@ -26,6 +27,8 @@ public class BattleSystem : MonoBehaviour {
     public BattleState state;
 
     void Start() {
+        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f;
+        ENEMY_POSITION.y = ground + enemyPrefab.transform.localScale.y * 0.5f;
         state = BattleState.START;
 
         GameObject playerGO = Instantiate(playerPrefab);
@@ -79,12 +82,11 @@ public class BattleSystem : MonoBehaviour {
 
 
     IEnumerator EnemyTurn() {
-        // todo add some ai stuff or randomization for the attack id here
         yield return new WaitForSeconds(1f);
-        Debug.Log("ENEMY ATTACKED BROOOOOO0O LETS FRICKEN GO");
-        playerUnit.TakeDamage(100);
+        enemyUnit.aiAttack();
+        yield return new WaitForSeconds(1f);
+        enemyUnit.IncrementCooldown();
 
-        playerHUD.SetHP(playerUnit.CurrentHP);
         SwitchTurns();
     }
 

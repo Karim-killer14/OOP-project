@@ -56,4 +56,13 @@ public class Unit : MonoBehaviour {
             move.Cooldown++;
         }
     }
+
+    public void aiAttack() {
+        System.Random rand = new();
+        int i = rand.Next(moves.Length);
+        while (!moves[i].CanUse()) i = rand.Next(moves.Length);
+
+        moves[i].Perform(this);
+
+    }
 }

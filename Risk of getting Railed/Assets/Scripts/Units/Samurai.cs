@@ -4,7 +4,7 @@ using UnityEngine;
 public class Samurai : Unit {
     private void Awake() {
         UnitName = "Samurai";
-        MaxHP = 100;
+        MaxHP = 200;
         CurrentSH = 0;
         moves = new Move[4];
 
