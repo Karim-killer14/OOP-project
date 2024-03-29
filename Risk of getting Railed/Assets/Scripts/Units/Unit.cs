@@ -12,6 +12,9 @@ public class Unit : MonoBehaviour {
     public Unit enemy;
     public Animator animator;
 
+    // Buffs related
+    public float dmgMultiplier = 1;
+
     public string UnitName { get; set; }
     public float MaxHP {
         get { return maxHP; }
@@ -19,11 +22,9 @@ public class Unit : MonoBehaviour {
             maxHP = currentHP = value;
         }
     }
-    public float CurrentSH
-    {
+    public float CurrentSH {
         get { return currentSH; }
-        set
-        {
+        set {
             currentSH = value;
             Debug.Log($"SH value ={currentSH}");
         }
@@ -37,13 +38,11 @@ public class Unit : MonoBehaviour {
     }
 
     public void TakeDamage(float dmg) {
-        if (CurrentSH >= dmg)
-        {
+        if (CurrentSH >= dmg) {
             CurrentSH -= dmg;
         }
 
-        else if (dmg > CurrentSH)
-        {
+        else if (dmg > CurrentSH) {
             float totdmg = dmg - CurrentSH;
             animator.SetTrigger("takeHit");
             CurrentHP -= totdmg - (dmgReduction * totdmg);

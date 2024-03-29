@@ -9,6 +9,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject moveBtnPrefab;
+    [SerializeField] GameObject buffBtnPrefab;
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject MainGUI;
@@ -27,7 +28,10 @@ public class BattleSystem : MonoBehaviour {
     public BattleState state;
 
     void Start() {
-        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f;
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
+
+        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f; // TODO UPDATE THOSE RELATIVELY TO SIZING
         ENEMY_POSITION.y = ground + enemyPrefab.transform.localScale.y * 0.5f;
         state = BattleState.START;
 
@@ -66,8 +70,8 @@ public class BattleSystem : MonoBehaviour {
             LoseScreen.SetActive(true);
         }
         else if (state == BattleState.WON) {
-            MainGUI.SetActive(false);
-            WinScreen.SetActive(true);
+            state = BattleState.WAIT;
+            StartCoroutine(WonGame());
         }
     }
 
@@ -108,6 +112,29 @@ public class BattleSystem : MonoBehaviour {
                 SwitchTurns();
             });
         }
+    }
 
+    IEnumerator WonGame() {
+        MainGUI.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        // buff screen now
+        WinScreen.SetActive(true);
+        Transform buffsHolder = WinScreen.transform.Find("Canvas/BuffsHolder");
+
+        Buff[] options = new Buff[1];
+        options[0] = new IncreaseDmg(100);
+
+        foreach (var buff in options) {
+            GameObject obj = Instantiate(buffBtnPrefab);
+            obj.transform.SetParent(buffsHolder);
+
+            Button btn = obj.GetComponentInChildren<Button>();
+
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = buff.desc;
+
+            btn.onClick.AddListener(() => {
+                buff.Perform(playerUnit);
+            });
+        }
     }
 }
