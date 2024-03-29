@@ -6,10 +6,10 @@ public class Sabry : Unit {
         UnitName = "Sabry";
         MaxHP = 100;
 
-        moves = new Move[3];
+        Moves = new Move[3];
 
-        moves[0] = new LightSwing();
-        moves[1] = new Heal();
-        moves[2] = new HeavySwing();
+        Moves[0] = new LightSwing();
+        Moves[1] = new Heal();
+        Moves[2] = new HeavySwing();
     }
 }

@@ -6,11 +6,11 @@ public class Samurai : Unit {
         UnitName = "Samurai";
         MaxHP = 200;
         CurrentSH = 0;
-        moves = new Move[4];
+        Moves = new Move[4];
 
-        moves[0] = new LightSwing();
-        moves[1] = new Heal();
-        moves[2] = new HeavySwing();
-        moves[3] = new Shield();
+        Moves[0] = new LightSwing();
+        Moves[1] = new Heal();
+        Moves[2] = new HeavySwing();
+        Moves[3] = new Shield();
     }
 }

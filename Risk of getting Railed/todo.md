@@ -1,9 +1,24 @@
-## GUI
-design buff btn now showing text
-rick roll lose screen in the rick roll stage
-how the buff btns look like and make them centered
+## GUI *on karim probably*
+*URGENT*
+design buff btn and fix not showing text
 make buff btns perfectly centered
-show player health
-grey out the buttons when not player turn
+when click on buff btn should navigate to next stage directly
+main menu not working after first stage
+
+
+*less urgent*
 show how much remaining cooldown for each attack
-change player positions accordingly
+grey out the buttons when not player turn
+show player health as number
+
+# on zeyad
+change player positions according to their size
+rick roll lose screen in the rick roll stage
+make buffs level based
+
+
+
+
+## maybe?
+character selector
+AI

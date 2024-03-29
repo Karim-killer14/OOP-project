@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
     [SerializeField] float dmgReduction = 0;
-    public Move[] moves;
+
+    public string UnitName { get; set; }
+    public Move[] Moves { get; set; }
     private float currentHP;
     private float maxHP;
     private float currentSH;
@@ -15,11 +17,15 @@ public class Unit : MonoBehaviour {
     // Buffs related
     public float dmgMultiplier = 1;
 
-    public string UnitName { get; set; }
     public float MaxHP {
         get { return maxHP; }
+        set { maxHP = currentHP = value; }
+    }
+    public float CurrentHP {
+        get { return currentHP; }
         set {
-            maxHP = currentHP = value;
+            currentHP = value;
+            currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
     }
     public float CurrentSH {
@@ -27,13 +33,6 @@ public class Unit : MonoBehaviour {
         set {
             currentSH = value;
             Debug.Log($"SH value ={currentSH}");
-        }
-    }
-    public float CurrentHP {
-        get { return currentHP; }
-        set {
-            currentHP = value;
-            currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
     }
 
@@ -51,17 +50,23 @@ public class Unit : MonoBehaviour {
     }
 
     public virtual void IncrementCooldown() {
-        foreach (var move in moves) {
+        foreach (var move in Moves) {
             move.Cooldown++;
         }
     }
 
     public void aiAttack() {
         System.Random rand = new();
-        int i = rand.Next(moves.Length);
-        while (!moves[i].CanUse()) i = rand.Next(moves.Length);
+        int i = rand.Next(Moves.Length);
+        while (!Moves[i].CanUse()) i = rand.Next(Moves.Length);
 
-        moves[i].Perform(this);
+        Moves[i].Perform(this);
 
+    }
+
+    public void Reset() {
+        foreach (var move in Moves)
+            move.ResetCooldown();
+        CurrentHP = MaxHP;
     }
 }
