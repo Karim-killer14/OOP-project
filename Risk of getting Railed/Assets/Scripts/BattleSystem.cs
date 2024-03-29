@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -9,6 +10,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject moveBtnPrefab;
+    [SerializeField] GameObject buffBtnPrefab;
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject MainGUI;
@@ -27,13 +29,23 @@ public class BattleSystem : MonoBehaviour {
     public BattleState state;
 
     void Start() {
-        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f;
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
+
+        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f; // TODO UPDATE THOSE RELATIVELY TO SIZING
         ENEMY_POSITION.y = ground + enemyPrefab.transform.localScale.y * 0.5f;
         state = BattleState.START;
 
-        GameObject playerGO = Instantiate(playerPrefab);
-        playerGO.transform.position = PLAYER_POSITION;
+        GameObject playerGO = GameObject.Find("Player");
+        if (!playerGO) {
+            playerGO = Instantiate(playerPrefab);
+            playerGO.name = "Player";
+            playerGO.transform.position = PLAYER_POSITION;
+            DontDestroyOnLoad(playerGO.gameObject);
+        }
+
         playerUnit = playerGO.GetComponent<Unit>();
+        playerUnit.Reset();
 
         GameObject enemyGO = Instantiate(enemyPrefab);
         enemyGO.transform.position = ENEMY_POSITION;
@@ -66,8 +78,8 @@ public class BattleSystem : MonoBehaviour {
             LoseScreen.SetActive(true);
         }
         else if (state == BattleState.WON) {
-            MainGUI.SetActive(false);
-            WinScreen.SetActive(true);
+            state = BattleState.WAIT;
+            StartCoroutine(WonGame());
         }
     }
 
@@ -91,13 +103,13 @@ public class BattleSystem : MonoBehaviour {
     }
 
     void LoadPlayerMoves() {
-        foreach (Move move in playerUnit.moves) {
-            GameObject Obj = Instantiate(moveBtnPrefab);
-            Obj.transform.SetParent(movesHolder);
-            TextMeshProUGUI txt = Obj.GetComponentInChildren<TextMeshProUGUI>();
+        foreach (Move move in playerUnit.Moves) {
+            GameObject obj = Instantiate(moveBtnPrefab);
+            obj.transform.SetParent(movesHolder);
+            TextMeshProUGUI txt = obj.GetComponentInChildren<TextMeshProUGUI>();
             if (txt) txt.text = $"{move.attackName}";
 
-            Button btn = Obj.GetComponent<Button>();
+            Button btn = obj.GetComponent<Button>();
             btn.onClick.AddListener(() => {
                 if (state != BattleState.PLAYERTURN)
                     return;
@@ -108,6 +120,31 @@ public class BattleSystem : MonoBehaviour {
                 SwitchTurns();
             });
         }
+    }
 
+    IEnumerator WonGame() {
+        MainGUI.SetActive(false);
+        yield return new WaitForSeconds(2f);
+
+        WinScreen.SetActive(true);
+        Transform buffsHolder = WinScreen.transform.Find("Canvas/BuffsHolder");
+
+        // TODO CHANGE THE OPTOINS BASED ON LEVEL
+        Buff[] options = new Buff[2];
+        options[0] = new IncreaseDmg(10);
+        options[1] = new IncreaseMaxHP(10);
+
+        foreach (var buff in options) {
+            GameObject obj = Instantiate(buffBtnPrefab);
+            obj.transform.SetParent(buffsHolder);
+
+            Button btn = obj.GetComponentInChildren<Button>();
+
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = buff.desc;
+
+            btn.onClick.AddListener(() => {
+                buff.Perform(playerUnit);
+            });
+        }
     }
 }

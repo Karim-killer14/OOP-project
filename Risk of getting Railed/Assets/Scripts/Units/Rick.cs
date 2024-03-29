@@ -7,9 +7,9 @@ public class Rick : Unit {
     private void Awake() {
         UnitName = "Rick";
         MaxHP = 300;
-        moves = new Move[2];
+        Moves = new Move[2];
 
-        moves[0] = new SayGoodbye(sayGoodbyeSnd);
-        moves[1] = new RickScream(rickScreamSnd);
+        Moves[0] = new SayGoodbye(sayGoodbyeSnd);
+        Moves[1] = new RickScream(rickScreamSnd);
     }
 }

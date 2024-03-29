@@ -11,7 +11,7 @@ class SayGoodbye : Move {
 
         sound.Play();
 
-        performer.enemy.TakeDamage(dmgValues[new System.Random().Next(dmgValues.Length)]);
+        performer.enemy.TakeDamage(dmgValues[new System.Random().Next(dmgValues.Length)] * performer.dmgMultiplier);
         return true;
     }
 }

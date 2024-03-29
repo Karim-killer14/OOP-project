@@ -18,6 +18,7 @@ public class Move : MonoBehaviour {
     }
 
     public bool CanUse() { return Cooldown >= cooldownLimit; }
+    public void ResetCooldown() { Cooldown = cooldownLimit; }
 
     public virtual bool Perform(Unit performer) {
         if (CanUse()) {

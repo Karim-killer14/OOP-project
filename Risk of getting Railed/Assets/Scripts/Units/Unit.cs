@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
     [SerializeField] float dmgReduction = 0;
-    public Move[] moves;
+
+    public string UnitName { get; set; }
+    public Move[] Moves { get; set; }
     private float currentHP;
     private float maxHP;
     private float currentSH;
@@ -12,21 +14,12 @@ public class Unit : MonoBehaviour {
     public Unit enemy;
     public Animator animator;
 
-    public string UnitName { get; set; }
+    // Buffs related
+    public float dmgMultiplier = 1;
+
     public float MaxHP {
         get { return maxHP; }
-        set {
-            maxHP = currentHP = value;
-        }
-    }
-    public float CurrentSH
-    {
-        get { return currentSH; }
-        set
-        {
-            currentSH = value;
-            Debug.Log($"SH value ={currentSH}");
-        }
+        set { maxHP = currentHP = value; }
     }
     public float CurrentHP {
         get { return currentHP; }
@@ -35,15 +28,20 @@ public class Unit : MonoBehaviour {
             currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
     }
+    public float CurrentSH {
+        get { return currentSH; }
+        set {
+            currentSH = value;
+            Debug.Log($"SH value ={currentSH}");
+        }
+    }
 
     public void TakeDamage(float dmg) {
-        if (CurrentSH >= dmg)
-        {
+        if (CurrentSH >= dmg) {
             CurrentSH -= dmg;
         }
 
-        else if (dmg > CurrentSH)
-        {
+        else if (dmg > CurrentSH) {
             float totdmg = dmg - CurrentSH;
             animator.SetTrigger("takeHit");
             CurrentHP -= totdmg - (dmgReduction * totdmg);
@@ -52,17 +50,23 @@ public class Unit : MonoBehaviour {
     }
 
     public virtual void IncrementCooldown() {
-        foreach (var move in moves) {
+        foreach (var move in Moves) {
             move.Cooldown++;
         }
     }
 
     public void aiAttack() {
         System.Random rand = new();
-        int i = rand.Next(moves.Length);
-        while (!moves[i].CanUse()) i = rand.Next(moves.Length);
+        int i = rand.Next(Moves.Length);
+        while (!Moves[i].CanUse()) i = rand.Next(Moves.Length);
 
-        moves[i].Perform(this);
+        Moves[i].Perform(this);
 
+    }
+
+    public void Reset() {
+        foreach (var move in Moves)
+            move.ResetCooldown();
+        CurrentHP = MaxHP;
     }
 }
