@@ -17,8 +17,6 @@ rick roll lose screen in the rick roll stage
 make buffs level based
 
 
-
-
 ## maybe?
 character selector
 AI
