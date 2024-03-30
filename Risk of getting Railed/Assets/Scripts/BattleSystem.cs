@@ -17,9 +17,6 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] Transform movesHolder;
     [SerializeField] float ground = -4f;
 
-    private Vector2 PLAYER_POSITION = new(-5, 0);
-    private Vector2 ENEMY_POSITION = new(5, 0);
-
     private Unit playerUnit;
     private Unit enemyUnit;
 
@@ -32,24 +29,22 @@ public class BattleSystem : MonoBehaviour {
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
 
-        PLAYER_POSITION.y = ground + playerPrefab.transform.localScale.y * 0.5f; // TODO UPDATE THOSE RELATIVELY TO SIZING
-        ENEMY_POSITION.y = ground + enemyPrefab.transform.localScale.y * 0.5f;
         state = BattleState.START;
 
         GameObject playerGO = GameObject.Find("Player");
         if (!playerGO) {
             playerGO = Instantiate(playerPrefab);
             playerGO.name = "Player";
-            playerGO.transform.position = PLAYER_POSITION;
             DontDestroyOnLoad(playerGO.gameObject);
         }
 
         playerUnit = playerGO.GetComponent<Unit>();
+        playerGO.transform.position = new Vector2(-5, playerUnit.YPos);
         playerUnit.Reset();
 
         GameObject enemyGO = Instantiate(enemyPrefab);
-        enemyGO.transform.position = ENEMY_POSITION;
         enemyUnit = enemyGO.GetComponent<Unit>();
+        enemyGO.transform.position = new Vector2(5, enemyUnit.YPos);
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);

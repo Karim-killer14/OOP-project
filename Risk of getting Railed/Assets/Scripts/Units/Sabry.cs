@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Sabry : Unit {
     private void Awake() {
+        YPos = -3.12f;
         UnitName = "Sabry";
         MaxHP = 100;
 
