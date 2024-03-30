@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
     [SerializeField] float dmgReduction = 0;
+    private float yPos = 0;
+    public float YPos { get { return yPos; } set { yPos = value; } }
 
     public string UnitName { get; set; }
     public Move[] Moves { get; set; }

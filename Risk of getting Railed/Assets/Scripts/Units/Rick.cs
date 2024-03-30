@@ -5,6 +5,7 @@ public class Rick : Unit {
     public AudioSource rickScreamSnd;
 
     private void Awake() {
+        YPos = -1.94f;
         UnitName = "Rick";
         MaxHP = 300;
         Moves = new Move[2];

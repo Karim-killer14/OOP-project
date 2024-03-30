@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgReduction: 0.5
-  moves:
-  - {fileID: 0}
+  yPOs: -2.09
   enemy: {fileID: 0}
   animator: {fileID: 0}
+  dmgMultiplier: 1
