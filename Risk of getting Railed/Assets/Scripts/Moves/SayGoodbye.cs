@@ -2,7 +2,7 @@ using UnityEngine;
 
 class SayGoodbye : Move {
     private readonly AudioSource sound;
-    private readonly int[] dmgValues = { 0, 50, 100 };
+    private readonly int[] dmgValues = { 0, 35, 80 };
 
     public SayGoodbye(AudioSource sound) : base("Say Goodbye", 3) { this.sound = sound; }
 
