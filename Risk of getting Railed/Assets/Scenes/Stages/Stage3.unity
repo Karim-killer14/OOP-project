@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 3577923642290684490, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6657980179631565669, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 870.93353
@@ -411,6 +415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 6871363085766673879, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9100783769518748191, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -659,6 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 8552787790557216976, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -669,6 +681,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8552787790557216976, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
   m_PrefabInstance: {fileID: 811299015}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &881925626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250735065921563476, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690286385364826375, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
+      propertyPath: m_Name
+      value: DeathBringer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
 --- !u!1 &917842663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,7 +2669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3908441290037744883, guid: 22723b1ea89740241980929a46da80d5, type: 3}
-  enemyPrefab: {fileID: 6734496523639150751, guid: ea42ec1b95ce7e14c80504c1da1965fa, type: 3}
+  enemyPrefab: {fileID: 6690286385364826375, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
   moveBtnPrefab: {fileID: 3625020597034461065, guid: 100fc3923027a264b89b320d0505555b, type: 3}
   buffBtnPrefab: {fileID: 1544374716393102504, guid: 9064250f0fec19945b6c0b90f9cd0cf5, type: 3}
   WinScreen: {fileID: 409263633}
@@ -4017,3 +4086,4 @@ SceneRoots:
   - {fileID: 105284104}
   - {fileID: 811299015}
   - {fileID: 409263632}
+  - {fileID: 881925626}
