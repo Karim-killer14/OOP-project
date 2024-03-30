@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 3577923642290684490, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6657980179631565669, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 870.93353
@@ -2612,7 +2616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3908441290037744883, guid: 22723b1ea89740241980929a46da80d5, type: 3}
-  enemyPrefab: {fileID: 6734496523639150751, guid: ea42ec1b95ce7e14c80504c1da1965fa, type: 3}
+  enemyPrefab: {fileID: 3452535330784017193, guid: 233e517a201d20f468beed40d8fc6061, type: 3}
   moveBtnPrefab: {fileID: 3625020597034461065, guid: 100fc3923027a264b89b320d0505555b, type: 3}
   buffBtnPrefab: {fileID: 1544374716393102504, guid: 9064250f0fec19945b6c0b90f9cd0cf5, type: 3}
   WinScreen: {fileID: 409263633}

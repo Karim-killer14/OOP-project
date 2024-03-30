@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Samurai : Unit {
     private void Awake() {
+        YPos = -2.18f;
         UnitName = "Samurai";
         MaxHP = 200;
         CurrentSH = 0;
