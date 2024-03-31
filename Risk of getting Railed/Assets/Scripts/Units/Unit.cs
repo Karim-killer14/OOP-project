@@ -37,7 +37,6 @@ public class Unit : MonoBehaviour {
             Debug.Log($"SH value ={currentSH}");
         }
     }
-
     public void TakeDamage(float dmg) {
         if (CurrentSH >= dmg) {
             CurrentSH -= dmg;
@@ -50,13 +49,11 @@ public class Unit : MonoBehaviour {
         }
         if (CurrentHP <= 0) animator.SetTrigger("dead");
     }
-
     public virtual void IncrementCooldown() {
         foreach (var move in Moves) {
             move.Cooldown++;
         }
     }
-
     public void aiAttack() {
         System.Random rand = new();
         int i = rand.Next(Moves.Length);
@@ -65,7 +62,6 @@ public class Unit : MonoBehaviour {
         Moves[i].Perform(this);
 
     }
-
     public void Reset() {
         foreach (var move in Moves)
             move.ResetCooldown();

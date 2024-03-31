@@ -7,8 +7,8 @@ public class Birdy : Unit
         UnitName = "Birdy";
         MaxHP = 200;
 
-        Moves = new Move[1];
+        Moves = new Move[0];
 
-        Moves[0] = new LightSwing();
+        
     }
 }
