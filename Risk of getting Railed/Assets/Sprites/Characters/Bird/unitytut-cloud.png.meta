@@ -171,7 +171,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      unitytut-cloud_0: 7676210349321894332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

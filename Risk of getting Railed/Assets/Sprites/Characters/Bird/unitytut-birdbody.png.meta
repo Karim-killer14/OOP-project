@@ -171,7 +171,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      unitytut-birdbody_0: -3803887304354961441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
