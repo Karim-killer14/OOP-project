@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1382626127114433324}
   - component: {fileID: 8766177303924846224}
   - component: {fileID: 2103899460827861232}
+  - component: {fileID: 6171792177330975152}
   m_Layer: 0
   m_Name: Birdy
   m_TagString: Untagged
@@ -104,3 +105,25 @@ MonoBehaviour:
   enemy: {fileID: 0}
   animator: {fileID: 0}
   dmgMultiplier: 1
+--- !u!95 &6171792177330975152
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640512367638154794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 160b4fb3535848848ad825d5a9d40693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

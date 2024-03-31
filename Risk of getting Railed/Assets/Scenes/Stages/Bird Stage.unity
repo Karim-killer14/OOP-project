@@ -149,14 +149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3908441290037744883, guid: 22723b1ea89740241980929a46da80d5, type: 3}
-  enemyPrefab: {fileID: 6734496523639150751, guid: ea42ec1b95ce7e14c80504c1da1965fa, type: 3}
+  enemyPrefab: {fileID: 6640512367638154794, guid: 728ddff7064e5a9488f0fc0176c2fa3c, type: 3}
   moveBtnPrefab: {fileID: 3625020597034461065, guid: 100fc3923027a264b89b320d0505555b, type: 3}
   buffBtnPrefab: {fileID: 1544374716393102504, guid: 9064250f0fec19945b6c0b90f9cd0cf5, type: 3}
   WinScreen: {fileID: 6871363085766673879, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
   LoseScreen: {fileID: 8552787790557216976, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
   MainGUI: {fileID: 1062333494}
   movesHolder: {fileID: 562232681}
-  ground: -5
+  ground: -6
   playerHUD: {fileID: 528255027}
   enemyHUD: {fileID: 1426507588}
   state: 0
@@ -834,8 +834,8 @@ Transform:
   m_GameObject: {fileID: 1682251802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -0.11, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0.01, y: 1.02, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 989083681}
