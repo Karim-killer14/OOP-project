@@ -3,14 +3,11 @@ using UnityEngine.UI;
 
 public class IncreaseDmg : Buff {
     private readonly float val;
-    
-    private string BuffName =  "Strength up";
-    private string BuffType = "Strength";
+
     public IncreaseDmg(float val) {
         desc = $"Increase damage by {val}%";
-        name = BuffName;
-        type = BuffType;
-        art = Resources.Load<Sprite>("Assets/Sprites/BuffAssets/Strength");
+        title = "Strength up";
+        type = "Strength";
         this.val = val;
 
     }

@@ -129,19 +129,16 @@ public class BattleSystem : MonoBehaviour {
         options[0] = new IncreaseDmg(10);
         options[1] = new IncreaseMaxHP(10);
 
-        foreach (var Buff in options) {
+        foreach (var buff in options) {
             GameObject obj = Instantiate(buffBtnPrefab);
             obj.transform.SetParent(buffsHolder);//create btn
 
             Button btn = obj.GetComponentInChildren<Button>();//get btn
 
-            obj.transform.Find("BuffDesc").GetComponent<TextMeshProUGUI>().text = Buff.desc;
-            obj.transform.Find("BuffName").GetComponent<TextMeshProUGUI>().text = Buff.name;
-            obj.transform.Find("BuffType").transform.Find("BuffTypeText").GetComponent<TextMeshProUGUI>().text = Buff.type;
-            obj.transform.Find("BuffArt").GetComponent<Image>().sprite = Buff.art;
+            buff.LoadInfoToUI(obj);
 
             btn.onClick.AddListener(() => {
-                Buff.Perform(playerUnit);
+                buff.Perform(playerUnit);
 
                 BuffScreen.SetActive(false);
                 WinScreen.SetActive(true);
