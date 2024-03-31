@@ -13,6 +13,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject buffBtnPrefab;
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
+    [SerializeField] GameObject BuffScreen;
     [SerializeField] GameObject MainGUI;
     [SerializeField] Transform movesHolder;
     [SerializeField] float ground = -4f;
@@ -87,7 +88,6 @@ public class BattleSystem : MonoBehaviour {
         else state = state == BattleState.PLAYERTURN ? BattleState.ENEMYTURN : BattleState.PLAYERTURN;
     }
 
-
     IEnumerator EnemyTurn() {
         yield return new WaitForSeconds(1f);
         enemyUnit.aiAttack();
@@ -121,24 +121,27 @@ public class BattleSystem : MonoBehaviour {
         MainGUI.SetActive(false);
         yield return new WaitForSeconds(2f);
 
-        WinScreen.SetActive(true);
-        Transform buffsHolder = WinScreen.transform.Find("Canvas/BuffsHolder");
+        BuffScreen.SetActive(true);
+        Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
-        // TODO CHANGE THE OPTOINS BASED ON LEVEL
+        // TODO CHANGE THE OPTIONS BASED ON LEVEL
         Buff[] options = new Buff[2];
         options[0] = new IncreaseDmg(10);
         options[1] = new IncreaseMaxHP(10);
 
         foreach (var buff in options) {
             GameObject obj = Instantiate(buffBtnPrefab);
-            obj.transform.SetParent(buffsHolder);
+            obj.transform.SetParent(buffsHolder);//create btn
 
-            Button btn = obj.GetComponentInChildren<Button>();
+            Button btn = obj.GetComponentInChildren<Button>();//get btn
 
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = buff.desc;
+            buff.LoadInfoToUI(obj);
 
             btn.onClick.AddListener(() => {
                 buff.Perform(playerUnit);
+
+                BuffScreen.SetActive(false);
+                WinScreen.SetActive(true);
             });
         }
     }

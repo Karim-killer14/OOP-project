@@ -1,10 +1,15 @@
+using Unity.Burst.Intrinsics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IncreaseMaxHP : Buff {
-    private readonly float val;
+    private float val;
 
     public IncreaseMaxHP(float val) {
+        this.val = val;
         desc = $"Increase maximum hp by {val}%";
+        title = "Bulk up";
+        type = "Health";
         this.val = val;
     }
 

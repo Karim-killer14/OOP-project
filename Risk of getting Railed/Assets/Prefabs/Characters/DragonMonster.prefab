@@ -5526,7 +5526,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f9b90214b7930db409b81bc87a1f8704, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5546,7 +5545,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -10535,7 +10534,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f7011f71b4d03734aa82330b4c0a64ea, type: 2}
-  - {fileID: 2100000, guid: f7011f71b4d03734aa82330b4c0a64ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10555,7 +10553,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 2
@@ -15448,7 +15446,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8a167f6ec39352540ab96a9ed7e9b9f6, type: 2}
-  - {fileID: 2100000, guid: 8a167f6ec39352540ab96a9ed7e9b9f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15468,7 +15465,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -15511,6 +15508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873030402443433276}
   - component: {fileID: 152957601734482752}
+  - component: {fileID: 5350400840509962535}
   m_Layer: 0
   m_Name: DragonMonster
   m_TagString: Untagged
@@ -15528,7 +15526,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.79965, y: 0.79965, z: 0.79965}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5657116164014445030}
@@ -15558,6 +15556,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5350400840509962535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041806645088666966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1e0f4dfbe5cb44387c05c22bfe2a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgReduction: 0
+  enemy: {fileID: 0}
+  animator: {fileID: 0}
+  dmgMultiplier: 1
 --- !u!1 &7731894900274485430
 GameObject:
   m_ObjectHideFlags: 0
@@ -20418,7 +20432,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8efe150237ddb644bae4a607cbb06a34, type: 2}
-  - {fileID: 2100000, guid: 8efe150237ddb644bae4a607cbb06a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20438,7 +20451,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
