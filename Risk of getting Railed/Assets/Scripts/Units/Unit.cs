@@ -3,9 +3,24 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour {
-    [SerializeField] float dmgReduction = 0;
+    private float dmgReduction = 0;
+    public float DmgReduction { get { return dmgReduction; } set { dmgReduction = math.max(0, value); } }
     private float yPos = 0;
     public float YPos { get { return yPos; } set { yPos = value; } }
+    private int burn = 0;
+    public int Burn {
+        get { return burn; }
+        set {
+            if (value > 0) {
+                burn = value;
+                // todo enable fire effect for character
+                return;
+            }
+
+            burn = 0;
+            // todo disable fire effect for dis character
+        }
+    }
 
     public string UnitName { get; set; }
     public Move[] Moves { get; set; }
@@ -45,7 +60,8 @@ public class Unit : MonoBehaviour {
         else if (dmg > CurrentSH) {
             float totdmg = dmg - CurrentSH;
             animator.SetTrigger("takeHit");
-            CurrentHP -= totdmg - (dmgReduction * totdmg);
+            CurrentHP -= totdmg - (DmgReduction * totdmg) + totdmg * (Burn / 3.0f);
+            Burn--;
         }
         if (CurrentHP <= 0) animator.SetTrigger("dead");
     }
