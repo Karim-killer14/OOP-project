@@ -3610,6 +3610,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2711206741144740750, guid: 571a3263a8ed46144841042a49445fce, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711206741144740750, guid: 571a3263a8ed46144841042a49445fce, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2923634691542477179, guid: 571a3263a8ed46144841042a49445fce, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3789,6 +3797,10 @@ PrefabInstance:
     - target: {fileID: 8284164129187403330, guid: 571a3263a8ed46144841042a49445fce, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305882736310165661, guid: 571a3263a8ed46144841042a49445fce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8702170907358921544, guid: 571a3263a8ed46144841042a49445fce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4019,6 +4031,10 @@ PrefabInstance:
     - target: {fileID: 8513145639491948626, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
       propertyPath: m_Name
       value: BuffScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513145639491948626, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
