@@ -488,9 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 3187336626382972866}
-  HealthText: {fileID: 0}
   hpSlider: {fileID: 7050593882462049108}
-  StageText: {fileID: 0}
 --- !u!1 &2558635102620838281
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +886,7 @@ GameObject:
   - component: {fileID: 1175781226571250940}
   - component: {fileID: 3946377970218066133}
   m_Layer: 5
-  m_Name: TrueMainGUI
+  m_Name: MainGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1416,9 +1414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 798246826981443988}
-  HealthText: {fileID: 4904167870945846971}
   hpSlider: {fileID: 991569537166537506}
-  StageText: {fileID: 0}
 --- !u!1 &4975623338072208585
 GameObject:
   m_ObjectHideFlags: 0

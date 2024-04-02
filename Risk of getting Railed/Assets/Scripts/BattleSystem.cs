@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -15,18 +16,25 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject BuffScreen;
-    [SerializeField] GameObject MainGUI;
-    [SerializeField] Transform movesHolder;
     [SerializeField] float ground = -4f;
     [SerializeField] AudioSource OST;
 
     private Unit playerUnit;
     private Unit enemyUnit;
 
-    public BattleHUD playerHUD;
-    public BattleHUD enemyHUD;
+    private GameObject MainGUI;
+    private Transform movesHolder;
+    private BattleHUD playerHUD;
+    private BattleHUD enemyHUD;
 
     public BattleState state;
+
+    private void Awake() {
+        MainGUI = GameObject.Find("MainGUI");
+        playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
+        enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
+        movesHolder = MainGUI.transform.Find("PlayerStation/MovesHolder").transform;
+    }
 
     void Start() {
         WinScreen.SetActive(false);
@@ -63,24 +71,20 @@ public class BattleSystem : MonoBehaviour {
     }
 
     private void Update() {
-        if (state == BattleState.ENEMYTURN) 
-        {
+        if (state == BattleState.ENEMYTURN) {
             movesHolder.gameObject.SetActive(false);
             state = BattleState.WAIT;
             StartCoroutine(EnemyTurn());
         }
-        else if (state == BattleState.PLAYERTURN) 
-        {
+        else if (state == BattleState.PLAYERTURN) {
             movesHolder.gameObject.SetActive(true);
         }
-        else if (state == BattleState.LOST) 
-        {
+        else if (state == BattleState.LOST) {
             MainGUI.SetActive(false);
             LoseScreen.SetActive(true);
             OST.enabled = false;
         }
-        else if (state == BattleState.WON) 
-        {
+        else if (state == BattleState.WON) {
             state = BattleState.WAIT;
             StartCoroutine(WonGame());
         }

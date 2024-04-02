@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BattleHUD : MonoBehaviour {
 
-	public Text nameText;
+	public TMPro.TMP_Text nameText;
 	public Slider hpSlider;
 
 	public void SetHUD(Unit unit) {
@@ -17,4 +17,5 @@ public class BattleHUD : MonoBehaviour {
 	public void SetHP(float hp) {
 		hpSlider.value = hp;
 	}
+
 }
