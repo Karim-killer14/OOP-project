@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Heal : Move {
-    private readonly int heal = 20;
+    private readonly int heal = 40;
     public Heal() : base("Heal", 3) { }
 
     public override bool Perform(Unit performer) {

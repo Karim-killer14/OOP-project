@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4730318664063023783}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.725
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3966852037283804270}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.6666667
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911e5bf07e80b634eadd5761c55885ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 097705553a71d7c4e8e7b4b1c0038cc0, type: 2}
+  audioMixer: {fileID: 24100000, guid: fe154ceeec0349a4fa03e4555567f73f, type: 2}
   resolutionDropdown: {fileID: 3486468596914171836}
 --- !u!1 &7705443997273201619
 GameObject:

@@ -123,8 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e408203a9361dd4489c896be8ead1f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgReduction: 0.5
-  yPOs: -2.09
+  dmgReduction: 0
   enemy: {fileID: 0}
   animator: {fileID: 0}
   dmgMultiplier: 1
