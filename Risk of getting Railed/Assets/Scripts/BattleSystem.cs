@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -18,6 +19,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject BuffScreen;
     [SerializeField] float ground = -4f;
     [SerializeField] AudioSource OST;
+    private Dictionary<int, GameObject> MoveBtnDict = new();
 
     private Unit playerUnit;
     private Unit enemyUnit;
@@ -109,11 +111,16 @@ public class BattleSystem : MonoBehaviour {
     }
 
     void LoadPlayerMoves() {
-        foreach (Move move in playerUnit.Moves) {
+        for (int i = 0; i < playerUnit.Moves.Length; i++) {
+            Move move = playerUnit.Moves[i];
             GameObject obj = Instantiate(moveBtnPrefab);
+            MoveBtnDict.Add(i, obj);
             obj.transform.SetParent(movesHolder);
-            TextMeshProUGUI txt = obj.GetComponentInChildren<TextMeshProUGUI>();
-            if (txt) txt.text = $"{move.attackName}";
+            TextMeshProUGUI titleTxt = obj.transform.Find("TitleTxt").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI cooldownTxt = obj.transform.Find("CooldownTxt").GetComponent<TextMeshProUGUI>();
+
+            titleTxt.text = $"{move.attackName}";
+            cooldownTxt.text = $"{move.cooldownLimit - move.Cooldown}";
 
             Button btn = obj.GetComponent<Button>();
             btn.onClick.AddListener(() => {
@@ -121,8 +128,14 @@ public class BattleSystem : MonoBehaviour {
                     return;
 
                 if (!move.Perform(playerUnit)) return;
-
                 playerUnit.IncrementCooldown();
+
+                foreach ((int moveI, GameObject obj) in MoveBtnDict) {
+                    // foreach (KeyValuePair<Move, GameObject> entry in MoveBtnDict) {
+                    TextMeshProUGUI cooldownTxt = obj.transform.Find("CooldownTxt").GetComponent<TextMeshProUGUI>();
+                    cooldownTxt.text = $"{playerUnit.Moves[moveI].cooldownLimit - playerUnit.Moves[moveI].Cooldown}";
+                }
+
                 SwitchTurns();
             });
         }
