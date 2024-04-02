@@ -27,6 +27,7 @@ public class Unit : MonoBehaviour {
     private float currentHP;
     private float maxHP;
     private float currentSH;
+    private float maxSH;//if max hp is 100 then max sh is maybe 200 (this is only useful for shield slider) and enemy shields ig
 
     public Unit enemy;
     public Animator animator;
@@ -44,6 +45,11 @@ public class Unit : MonoBehaviour {
             currentHP = value;
             currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
+    }
+    public float MaxSH
+    {
+        get { return maxSH; }
+        set { maxSH = value; }
     }
     public float CurrentSH {
         get { return currentSH; }
