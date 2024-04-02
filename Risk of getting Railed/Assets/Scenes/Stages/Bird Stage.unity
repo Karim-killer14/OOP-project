@@ -154,6 +154,7 @@ MonoBehaviour:
   buffBtnPrefab: {fileID: 1544374716393102504, guid: 9064250f0fec19945b6c0b90f9cd0cf5, type: 3}
   WinScreen: {fileID: 6871363085766673879, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
   LoseScreen: {fileID: 8552787790557216976, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+  BuffScreen: {fileID: 0}
   MainGUI: {fileID: 1062333494}
   movesHolder: {fileID: 562232681}
   ground: -6
@@ -599,6 +600,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2601787085412626118, guid: 571a3263a8ed46144841042a49445fce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711206741144740750, guid: 571a3263a8ed46144841042a49445fce, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711206741144740750, guid: 571a3263a8ed46144841042a49445fce, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4729001500397756713, guid: 571a3263a8ed46144841042a49445fce, type: 3}
