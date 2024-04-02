@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -17,6 +18,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject MainGUI;
     [SerializeField] Transform movesHolder;
     [SerializeField] float ground = -4f;
+    [SerializeField] AudioSource OST;
 
     private Unit playerUnit;
     private Unit enemyUnit;
@@ -61,19 +63,24 @@ public class BattleSystem : MonoBehaviour {
     }
 
     private void Update() {
-        if (state == BattleState.ENEMYTURN) {
-            // todo grey out the buttons
+        if (state == BattleState.ENEMYTURN) 
+        {
+            movesHolder.gameObject.SetActive(false);
             state = BattleState.WAIT;
             StartCoroutine(EnemyTurn());
         }
-        else if (state == BattleState.PLAYERTURN) {
-            // todo ungrey the buttons
+        else if (state == BattleState.PLAYERTURN) 
+        {
+            movesHolder.gameObject.SetActive(true);
         }
-        else if (state == BattleState.LOST) {
+        else if (state == BattleState.LOST) 
+        {
             MainGUI.SetActive(false);
             LoseScreen.SetActive(true);
+            OST.enabled = false;
         }
-        else if (state == BattleState.WON) {
+        else if (state == BattleState.WON) 
+        {
             state = BattleState.WAIT;
             StartCoroutine(WonGame());
         }
@@ -118,8 +125,9 @@ public class BattleSystem : MonoBehaviour {
     }
 
     IEnumerator WonGame() {
+        OST.enabled = false;
         MainGUI.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.7f);
 
         BuffScreen.SetActive(true);
         Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
