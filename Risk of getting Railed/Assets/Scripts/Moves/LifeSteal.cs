@@ -2,8 +2,8 @@
 
 class LifeSteal : Move
 {
-    private readonly int[] dmgValues = { 50,50,50,100,100,150 };
-    public LifeSteal() : base("Life Steal", 0) { }
+    private readonly int[] dmgValues = { 50,50,50,100,100,100 };
+    public LifeSteal() : base("Life Steal", 5) { }
 
 
     public override bool Perform(Unit performer)

@@ -4,12 +4,13 @@ public class Birdy : Unit
 {
     private void Awake()
     {
-        YPos = -1.87f;
+        YPos = -21.87f;
         UnitName = "Birdy Sabry";
-        MaxHP = 200;
+        MaxHP = 300;
 
-        Moves = new Move[1];
+        Moves = new Move[2];
 
-        Moves[0] = new LightSwing();
+        Moves[0] = new EggBomb();
+        Moves[1] = new BirdSpin();
     }
 }
