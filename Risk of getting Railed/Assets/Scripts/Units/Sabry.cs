@@ -5,7 +5,7 @@ public class Sabry : Unit {
     private void Awake() {
         YPos = -3.12f;
         UnitName = "Sabry";
-        MaxHP = 90;
+        MaxHP = 100;
 
         Moves = new Move[3];
 

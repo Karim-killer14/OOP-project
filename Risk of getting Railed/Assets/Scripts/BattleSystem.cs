@@ -22,6 +22,11 @@ public class BattleSystem : MonoBehaviour {
     private AudioSource OST;
     private Dictionary<int, GameObject> MoveBtnDict = new();
 
+    Buff[][] buffs = new Buff[][] {
+            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
+            new Buff[]{},
+        };
+
     private Unit playerUnit;
     private Unit enemyUnit;
 
@@ -149,36 +154,36 @@ public class BattleSystem : MonoBehaviour {
     }
 
     IEnumerator WonGame() {
-        Buff[][] buffs = new Buff[][] {
-            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)}
-        };
-
-
-
         OST.enabled = false;
         MainGUI.SetActive(false);
         yield return new WaitForSeconds(1.7f);
 
-        BuffScreen.SetActive(true);
-        Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
         string sceneName = SceneManager.GetActiveScene().name;
         Buff[] options = buffs[int.Parse(sceneName[^1..]) - 1];
 
-        foreach (var buff in options) {
-            GameObject obj = Instantiate(buffBtnPrefab);
-            obj.transform.SetParent(buffsHolder);//create btn
+        if (options.Length <= 0) {
+            WinScreen.SetActive(true);
+        }
+        else {
+            BuffScreen.SetActive(true);
+            Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
-            Button btn = obj.GetComponentInChildren<Button>();//get btn
+            foreach (var buff in options) {
+                GameObject obj = Instantiate(buffBtnPrefab);
+                obj.transform.SetParent(buffsHolder);//create btn
 
-            buff.LoadInfoToUI(obj);
+                Button btn = obj.GetComponentInChildren<Button>();//get btn
 
-            btn.onClick.AddListener(() => {
-                buff.Perform(playerUnit);
+                buff.LoadInfoToUI(obj);
 
-                BuffScreen.SetActive(false);
-                WinScreen.SetActive(true);
-            });
+                btn.onClick.AddListener(() => {
+                    buff.Perform(playerUnit);
+
+                    BuffScreen.SetActive(false);
+                    WinScreen.SetActive(true);
+                });
+            }
         }
     }
 }
