@@ -1,7 +1,3 @@
-using Unity.Burst.Intrinsics;
-using UnityEngine;
-using UnityEngine.UI;
-
 public class IncreaseMaxHP : Buff {
     private float val;
 

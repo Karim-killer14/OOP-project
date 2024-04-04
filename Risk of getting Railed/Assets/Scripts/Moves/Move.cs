@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
     public string attackName;
-    protected int cooldownLimit;
+    public int cooldownLimit;
     private int cooldown;
     public int Cooldown {
         get { return cooldown; }

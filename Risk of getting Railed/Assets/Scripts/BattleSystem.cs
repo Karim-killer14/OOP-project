@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -15,18 +18,32 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject BuffScreen;
-    [SerializeField] GameObject MainGUI;
-    [SerializeField] Transform movesHolder;
     [SerializeField] float ground = -4f;
-    [SerializeField] AudioSource OST;
+    private AudioSource OST;
+    private Dictionary<int, GameObject> MoveBtnDict = new();
+
+    Buff[][] buffs = new Buff[][] {
+            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
+            new Buff[]{},
+        };
 
     private Unit playerUnit;
     private Unit enemyUnit;
 
-    public BattleHUD playerHUD;
-    public BattleHUD enemyHUD;
+    private GameObject MainGUI;
+    private Transform movesHolder;
+    private BattleHUD playerHUD;
+    private BattleHUD enemyHUD;
 
     public BattleState state;
+
+    private void Awake() {
+        OST = GameObject.Find("OST").GetComponent<AudioSource>();
+        MainGUI = GameObject.Find("MainGUI");
+        playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
+        enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
+        movesHolder = MainGUI.transform.Find("PlayerStation/MovesHolder").transform;
+    }
 
     void Start() {
         WinScreen.SetActive(false);
@@ -63,24 +80,20 @@ public class BattleSystem : MonoBehaviour {
     }
 
     private void Update() {
-        if (state == BattleState.ENEMYTURN) 
-        {
+        if (state == BattleState.ENEMYTURN) {
             movesHolder.gameObject.SetActive(false);
             state = BattleState.WAIT;
             StartCoroutine(EnemyTurn());
         }
-        else if (state == BattleState.PLAYERTURN) 
-        {
+        else if (state == BattleState.PLAYERTURN) {
             movesHolder.gameObject.SetActive(true);
         }
-        else if (state == BattleState.LOST) 
-        {
+        else if (state == BattleState.LOST) {
             MainGUI.SetActive(false);
             LoseScreen.SetActive(true);
             OST.enabled = false;
         }
-        else if (state == BattleState.WON) 
-        {
+        else if (state == BattleState.WON) {
             state = BattleState.WAIT;
             StartCoroutine(WonGame());
         }
@@ -105,11 +118,16 @@ public class BattleSystem : MonoBehaviour {
     }
 
     void LoadPlayerMoves() {
-        foreach (Move move in playerUnit.Moves) {
+        for (int i = 0; i < playerUnit.Moves.Length; i++) {
+            Move move = playerUnit.Moves[i];
             GameObject obj = Instantiate(moveBtnPrefab);
+            MoveBtnDict.Add(i, obj);
             obj.transform.SetParent(movesHolder);
-            TextMeshProUGUI txt = obj.GetComponentInChildren<TextMeshProUGUI>();
-            if (txt) txt.text = $"{move.attackName}";
+            TextMeshProUGUI titleTxt = obj.transform.Find("TitleTxt").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI cooldownTxt = obj.transform.Find("CooldownTxt").GetComponent<TextMeshProUGUI>();
+
+            titleTxt.text = $"{move.attackName}";
+            cooldownTxt.text = $"{move.cooldownLimit - move.Cooldown}";
 
             Button btn = obj.GetComponent<Button>();
             btn.onClick.AddListener(() => {
@@ -117,11 +135,22 @@ public class BattleSystem : MonoBehaviour {
                     return;
 
                 if (!move.Perform(playerUnit)) return;
-
                 playerUnit.IncrementCooldown();
+
+                foreach ((int moveI, GameObject obj) in MoveBtnDict) {
+                    // foreach (KeyValuePair<Move, GameObject> entry in MoveBtnDict) {
+                    TextMeshProUGUI cooldownTxt = obj.transform.Find("CooldownTxt").GetComponent<TextMeshProUGUI>();
+                    cooldownTxt.text = $"{playerUnit.Moves[moveI].cooldownLimit - playerUnit.Moves[moveI].Cooldown}";
+                }
+
                 SwitchTurns();
             });
         }
+    }
+
+    [ContextMenu("win")]
+    void testWin() {
+        StartCoroutine(WonGame());
     }
 
     IEnumerator WonGame() {
@@ -129,28 +158,32 @@ public class BattleSystem : MonoBehaviour {
         MainGUI.SetActive(false);
         yield return new WaitForSeconds(1.7f);
 
-        BuffScreen.SetActive(true);
-        Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
-        // TODO CHANGE THE OPTIONS BASED ON LEVEL
-        Buff[] options = new Buff[2];
-        options[0] = new IncreaseDmg(10);
-        options[1] = new IncreaseMaxHP(10);
+        string sceneName = SceneManager.GetActiveScene().name;
+        Buff[] options = buffs[int.Parse(sceneName[^1..]) - 1];
 
-        foreach (var buff in options) {
-            GameObject obj = Instantiate(buffBtnPrefab);
-            obj.transform.SetParent(buffsHolder);//create btn
+        if (options.Length <= 0) {
+            WinScreen.SetActive(true);
+        }
+        else {
+            BuffScreen.SetActive(true);
+            Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
-            Button btn = obj.GetComponentInChildren<Button>();//get btn
+            foreach (var buff in options) {
+                GameObject obj = Instantiate(buffBtnPrefab);
+                obj.transform.SetParent(buffsHolder);//create btn
 
-            buff.LoadInfoToUI(obj);
+                Button btn = obj.GetComponentInChildren<Button>();//get btn
 
-            btn.onClick.AddListener(() => {
-                buff.Perform(playerUnit);
+                buff.LoadInfoToUI(obj);
 
-                BuffScreen.SetActive(false);
-                WinScreen.SetActive(true);
-            });
+                btn.onClick.AddListener(() => {
+                    buff.Perform(playerUnit);
+
+                    BuffScreen.SetActive(false);
+                    WinScreen.SetActive(true);
+                });
+            }
         }
     }
 }

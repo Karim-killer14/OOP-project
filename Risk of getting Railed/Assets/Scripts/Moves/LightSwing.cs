@@ -7,7 +7,7 @@ public class LightSwing : Move {
     public override bool Perform(Unit performer) {
         if (!base.Perform(performer)) return false;
 
-        performer.enemy.TakeDamage(damage * performer.dmgMultiplier);
+        performer.enemy.TakeDamage(damage);
         return true;
     }
 }

@@ -10,7 +10,7 @@ class RickScream : Move {
 
         sound.Play();
 
-        performer.enemy.TakeDamage(damage * performer.dmgMultiplier);
+        performer.enemy.TakeDamage(damage);
         return true;
     }
 }

@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class BattleHUD : MonoBehaviour {
 
-	public TextMeshProUGUI nameText;
-    public TextMeshProUGUI HealthText;
-    public Slider hpSlider;
-	public TextMeshProUGUI StageText;
+	public TMPro.TMP_Text nameText;
+	public Slider hpSlider;
 
 	public void SetHUD(Unit unit) {
 		nameText.text = unit.UnitName;
@@ -19,12 +16,6 @@ public class BattleHUD : MonoBehaviour {
 
 	public void SetHP(float hp) {
 		hpSlider.value = hp;
-    }
-
-	/*public void SetSh(float sh)
-	{
-		shSlider.value = sh;
-        ShieldText.text = $"{sh}";
-    }*/
+	}
 
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 
 
-public class DragonMonster : Unit {
+public class FireLord : Unit {
     [SerializeField] AudioSource fireBreathSnd;
     [SerializeField] AudioSource stompSnd;
 
     private void Awake() {
         YPos = -3.43f;
-        UnitName = "Dragon Warrior";
+        UnitName = "Fire Lord";
         MaxHP = 1000;
 
         Moves = new Move[2];
