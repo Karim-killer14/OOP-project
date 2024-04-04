@@ -8,6 +8,8 @@ public class Unit : MonoBehaviour {
     private float yPos = 0;
     public float YPos { get { return yPos; } set { yPos = value; } }
     private int burn = 0;
+
+
     public int Burn {
         get { return burn; }
         set {
@@ -34,6 +36,7 @@ public class Unit : MonoBehaviour {
 
     // Buffs related
     public float dmgMultiplier = 1;
+    public float RngDmgMultChance { get; set; } = 1;
 
     public float MaxHP {
         get { return maxHP; }
@@ -46,8 +49,7 @@ public class Unit : MonoBehaviour {
             currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
     }
-    public float MaxSH
-    {
+    public float MaxSH {
         get { return maxSH; }
         set { maxSH = value; }
     }
@@ -59,6 +61,8 @@ public class Unit : MonoBehaviour {
         }
     }
     public void TakeDamage(float dmg) {
+        dmg *= this.enemy.dmgMultiplier * (UnityEngine.Random.Range(0.0f, 1.0f) <= this.enemy.RngDmgMultChance ? 1 : 1 / this.enemy.dmgMultiplier);
+
         if (CurrentSH >= dmg) {
             CurrentSH -= dmg;
         }

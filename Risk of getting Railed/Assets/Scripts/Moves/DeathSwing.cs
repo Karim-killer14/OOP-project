@@ -9,7 +9,7 @@ public class DeathSwing : Move
     {
         if (!base.Perform(performer)) return false;
 
-        performer.enemy.TakeDamage(dmgValues[new System.Random().Next(dmgValues.Length)] * performer.dmgMultiplier);
+        performer.enemy.TakeDamage(dmgValues[new System.Random().Next(dmgValues.Length)]);
         return true;
     }
 }

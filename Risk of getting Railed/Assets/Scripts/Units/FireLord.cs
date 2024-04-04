@@ -1,14 +1,14 @@
 using UnityEngine;
 
 
-public class DragonMonster : Unit {
+public class FireLord : Unit {
     [SerializeField] AudioSource fireBreathSnd;
     [SerializeField] AudioSource stompSnd;
 
     private void Awake() {
         YPos = -3.43f;
-        UnitName = "Dragon Warrior";
-        MaxHP = 1000;
+        UnitName = "Fire Lord";
+        MaxHP = 100;
 
         Moves = new Move[2];
         Moves[0] = new FireSplash(fireBreathSnd);

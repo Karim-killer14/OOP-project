@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -18,7 +19,7 @@ public class BattleSystem : MonoBehaviour {
     [SerializeField] GameObject LoseScreen;
     [SerializeField] GameObject BuffScreen;
     [SerializeField] float ground = -4f;
-    [SerializeField] AudioSource OST;
+    private AudioSource OST;
     private Dictionary<int, GameObject> MoveBtnDict = new();
 
     private Unit playerUnit;
@@ -32,6 +33,7 @@ public class BattleSystem : MonoBehaviour {
     public BattleState state;
 
     private void Awake() {
+        OST = GameObject.Find("OST").GetComponent<AudioSource>();
         MainGUI = GameObject.Find("MainGUI");
         playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
         enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
@@ -141,7 +143,18 @@ public class BattleSystem : MonoBehaviour {
         }
     }
 
+    [ContextMenu("win")]
+    void testWin() {
+        StartCoroutine(WonGame());
+    }
+
     IEnumerator WonGame() {
+        Buff[][] buffs = new Buff[][] {
+            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)}
+        };
+
+
+
         OST.enabled = false;
         MainGUI.SetActive(false);
         yield return new WaitForSeconds(1.7f);
@@ -149,10 +162,8 @@ public class BattleSystem : MonoBehaviour {
         BuffScreen.SetActive(true);
         Transform buffsHolder = BuffScreen.transform.Find("Canvas/BuffsHolder");
 
-        // TODO CHANGE THE OPTIONS BASED ON LEVEL
-        Buff[] options = new Buff[2];
-        options[0] = new IncreaseDmg(10);
-        options[1] = new IncreaseMaxHP(10);
+        string sceneName = SceneManager.GetActiveScene().name;
+        Buff[] options = buffs[int.Parse(sceneName[^1..]) - 1];
 
         foreach (var buff in options) {
             GameObject obj = Instantiate(buffBtnPrefab);
