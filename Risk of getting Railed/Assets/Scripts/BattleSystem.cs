@@ -39,7 +39,7 @@ public class BattleSystem : MonoBehaviour {
 
     private void Awake() {
         OST = GameObject.Find("OST").GetComponent<AudioSource>();
-        MainGUI = GameObject.Find("MainGUI");
+        MainGUI = GameObject.Find("TrueMainGUI");
         playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
         enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
         movesHolder = MainGUI.transform.Find("PlayerStation/MovesHolder").transform;

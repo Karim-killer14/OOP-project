@@ -1981,7 +1981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3166954133627738260, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_Name
-      value: MainGUI
+      value: TrueMainGUI
       objectReference: {fileID: 0}
     - target: {fileID: 4470913314213301369, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_Pivot.x
@@ -2113,7 +2113,6 @@ MonoBehaviour:
   LoseScreen: {fileID: 523923427}
   BuffScreen: {fileID: 113865650}
   ground: -4
-  OST: {fileID: 0}
   state: 0
 --- !u!4 &1285115697
 Transform:

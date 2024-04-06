@@ -196,17 +196,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3577923642290684490, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
   m_PrefabInstance: {fileID: 105284104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &112812614 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810579861821746607, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
-  m_PrefabInstance: {fileID: 2051790140}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efefa2240109fc445bc308519b60ee82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &220234357
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,11 +433,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6871363085766673879, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
   m_PrefabInstance: {fileID: 409263632}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &780618278 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3166954133627738260, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
-  m_PrefabInstance: {fileID: 2051790140}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &811299015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,11 +519,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8552787790557216976, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
   m_PrefabInstance: {fileID: 811299015}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &891011487 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3831027822668998617, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
-  m_PrefabInstance: {fileID: 2051790140}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &917842663
 GameObject:
@@ -944,17 +923,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &974916216 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2420796584895726599, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
-  m_PrefabInstance: {fileID: 2051790140}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efefa2240109fc445bc308519b60ee82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1191567025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2673,12 +2641,7 @@ MonoBehaviour:
   WinScreen: {fileID: 409263633}
   LoseScreen: {fileID: 811299016}
   BuffScreen: {fileID: 1562274963}
-  MainGUI: {fileID: 780618278}
-  movesHolder: {fileID: 891011487}
   ground: -4
-  OST: {fileID: 0}
-  playerHUD: {fileID: 112812614}
-  enemyHUD: {fileID: 974916216}
   state: 0
 --- !u!4 &1717955359
 Transform:
