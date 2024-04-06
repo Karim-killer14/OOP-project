@@ -1272,7 +1272,51 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VikingNoEffect-Sheet_0: 5563694990548859825
+      VikingNoEffect-Sheet_1: -8837777328585812390
+      VikingNoEffect-Sheet_10: 1333057986677348487
+      VikingNoEffect-Sheet_11: -4500243002496535030
+      VikingNoEffect-Sheet_12: 2088792051097737453
+      VikingNoEffect-Sheet_13: -7644851126978984556
+      VikingNoEffect-Sheet_14: 133396692190658716
+      VikingNoEffect-Sheet_15: 2215729155271227496
+      VikingNoEffect-Sheet_16: -699402877548547465
+      VikingNoEffect-Sheet_17: -7283628405637322761
+      VikingNoEffect-Sheet_18: -507033926899285637
+      VikingNoEffect-Sheet_19: -7985713164269252819
+      VikingNoEffect-Sheet_2: -7898119478543414897
+      VikingNoEffect-Sheet_20: -5717874825303061422
+      VikingNoEffect-Sheet_21: 3481199917770159036
+      VikingNoEffect-Sheet_22: -1153590009073019723
+      VikingNoEffect-Sheet_23: -5909411272663710967
+      VikingNoEffect-Sheet_24: 1393044352632515636
+      VikingNoEffect-Sheet_25: -2351264403237429527
+      VikingNoEffect-Sheet_26: -1402639549447979255
+      VikingNoEffect-Sheet_27: -2346799425891774885
+      VikingNoEffect-Sheet_28: -7075482223725358593
+      VikingNoEffect-Sheet_29: -8499086453689802484
+      VikingNoEffect-Sheet_3: 7410487992574455415
+      VikingNoEffect-Sheet_30: -8360197820078767776
+      VikingNoEffect-Sheet_31: -3223334434495110281
+      VikingNoEffect-Sheet_32: -7288477726189353785
+      VikingNoEffect-Sheet_33: -4837445501148163286
+      VikingNoEffect-Sheet_34: 8909525097960975219
+      VikingNoEffect-Sheet_35: 5165942293037414389
+      VikingNoEffect-Sheet_36: -4040249060496888882
+      VikingNoEffect-Sheet_37: -1224870503333152222
+      VikingNoEffect-Sheet_38: 5508520673152161198
+      VikingNoEffect-Sheet_39: 726132076731516336
+      VikingNoEffect-Sheet_4: -7705177492812404361
+      VikingNoEffect-Sheet_40: 646935190366334122
+      VikingNoEffect-Sheet_41: 2345964296559019775
+      VikingNoEffect-Sheet_42: -9011104068980371468
+      VikingNoEffect-Sheet_43: 2490672870708314762
+      VikingNoEffect-Sheet_5: 669851786404942389
+      VikingNoEffect-Sheet_6: -1564039422198862247
+      VikingNoEffect-Sheet_7: -4619895266707967651
+      VikingNoEffect-Sheet_8: -1788979261734230943
+      VikingNoEffect-Sheet_9: -3444076142945056124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

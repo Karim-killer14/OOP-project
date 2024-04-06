@@ -272,7 +272,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ice Smoke-Sheet_0: 1212682527752014258
+      Ice Smoke-Sheet_1: -6425105618784569738
+      Ice Smoke-Sheet_2: 796229614436763813
+      Ice Smoke-Sheet_3: 637829740834093053
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

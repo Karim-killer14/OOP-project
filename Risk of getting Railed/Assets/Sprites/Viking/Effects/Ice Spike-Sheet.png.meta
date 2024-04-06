@@ -322,7 +322,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ice Spike-Sheet_0: -6557654283554391296
+      Ice Spike-Sheet_1: 7721811761572079378
+      Ice Spike-Sheet_2: 6991266288695290841
+      Ice Spike-Sheet_3: -6319948109976189258
+      Ice Spike-Sheet_4: -2670029497127361647
+      Ice Spike-Sheet_5: 957730287556860517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

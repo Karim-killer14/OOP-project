@@ -7,7 +7,7 @@ public class EggGun : Move
     private readonly int[] dmgValues = { 3, 4, 5, 3, 4, 5, 3, 4, 5, 10 };
     public float fireRate;
     public float timer = 0;
-    public EggGun() : base("Egg Gun", 0) { }
+    public EggGun() : base("Egg Gun", 2) { }
 
     public override bool Perform(Unit performer)
     {

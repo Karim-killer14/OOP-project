@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ice Spike_0: 7745868862786289509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

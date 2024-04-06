@@ -8,8 +8,10 @@ public class Birdy : Unit
         UnitName = "Birdy Sabry";
         MaxHP = 300;
 
-        Moves = new Move[1];
+        Moves = new Move[3];
 
         Moves[0] = new EggGun();
+        Moves[1] = new EggBomb();
+        Moves[2] = new BirdSpin();
     }
 }

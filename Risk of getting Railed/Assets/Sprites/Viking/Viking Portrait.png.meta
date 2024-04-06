@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Viking Portrait_0: 1025542225864746368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

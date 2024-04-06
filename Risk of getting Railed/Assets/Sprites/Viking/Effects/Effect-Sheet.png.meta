@@ -222,7 +222,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Effect-Sheet_0: 6925525122209130197
+      Effect-Sheet_1: -5942306437869812341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

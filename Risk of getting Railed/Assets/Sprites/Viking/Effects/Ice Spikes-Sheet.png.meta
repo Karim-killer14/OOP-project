@@ -997,7 +997,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ice Spikes-Sheet_0: -1881678163831447057
+      Ice Spikes-Sheet_1: 8854758834181922510
+      Ice Spikes-Sheet_10: -2656398954964593509
+      Ice Spikes-Sheet_11: 1611846793605952043
+      Ice Spikes-Sheet_12: 5976525846896590743
+      Ice Spikes-Sheet_13: -1241933108566997553
+      Ice Spikes-Sheet_14: 6094202874524392697
+      Ice Spikes-Sheet_15: 6384483067378255756
+      Ice Spikes-Sheet_16: -7614272298210828163
+      Ice Spikes-Sheet_17: 2577688156644241495
+      Ice Spikes-Sheet_18: 6510249557050132443
+      Ice Spikes-Sheet_19: -8639338559693416870
+      Ice Spikes-Sheet_2: 7527269848962822488
+      Ice Spikes-Sheet_20: 284249967653476465
+      Ice Spikes-Sheet_21: 1737627707075325228
+      Ice Spikes-Sheet_22: 5912495948687498427
+      Ice Spikes-Sheet_23: 1492368990064613587
+      Ice Spikes-Sheet_24: 1347407914232489104
+      Ice Spikes-Sheet_25: 6327627494871655300
+      Ice Spikes-Sheet_26: 4906555791789074624
+      Ice Spikes-Sheet_27: -949019559103736549
+      Ice Spikes-Sheet_28: 7792029044726628492
+      Ice Spikes-Sheet_29: 262714407024305910
+      Ice Spikes-Sheet_3: -8922932984931871961
+      Ice Spikes-Sheet_30: 7312637565546908751
+      Ice Spikes-Sheet_31: -3011303048826868689
+      Ice Spikes-Sheet_32: -2022277672891796014
+      Ice Spikes-Sheet_4: 1132270378557116668
+      Ice Spikes-Sheet_5: -3731785861992321051
+      Ice Spikes-Sheet_6: -5357291094773221875
+      Ice Spikes-Sheet_7: 3170087056913308070
+      Ice Spikes-Sheet_8: 2438547828188459647
+      Ice Spikes-Sheet_9: -5829284453378286182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hooded knight run_0: -8815180782650349468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

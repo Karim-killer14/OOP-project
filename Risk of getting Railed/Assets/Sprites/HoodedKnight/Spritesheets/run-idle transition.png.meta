@@ -222,7 +222,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      run-idle transition_0: -8549434940585288013
+      run-idle transition_1: -6168091833295662047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
