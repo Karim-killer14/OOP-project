@@ -489,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 3187336626382972866}
   hpSlider: {fileID: 7050593882462049108}
+  healthTxt: {fileID: 0}
 --- !u!1 &2558635102620838281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 798246826981443988}
   hpSlider: {fileID: 991569537166537506}
+  healthTxt: {fileID: 4904167870945846971}
 --- !u!1 &4975623338072208585
 GameObject:
   m_ObjectHideFlags: 0

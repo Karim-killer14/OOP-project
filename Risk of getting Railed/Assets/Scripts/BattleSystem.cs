@@ -25,6 +25,12 @@ public class BattleSystem : MonoBehaviour {
     Buff[][] buffs = new Buff[][] {
             new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
             new Buff[]{},
+            new Buff[]{},
+            new Buff[]{},
+            new Buff[]{},
+            new Buff[]{},
+            new Buff[]{},
+            new Buff[]{},
         };
 
     private Unit playerUnit;
@@ -39,7 +45,7 @@ public class BattleSystem : MonoBehaviour {
 
     private void Awake() {
         OST = GameObject.Find("OST").GetComponent<AudioSource>();
-        MainGUI = GameObject.Find("TrueMainGUI");
+        MainGUI = GameObject.Find("MainGUI");
         playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
         enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
         movesHolder = MainGUI.transform.Find("PlayerStation/MovesHolder").transform;
