@@ -4,9 +4,9 @@ class RngAttackDmg : Buff {
     public RngAttackDmg(float mult, float chance) {
         this.mult = mult;
         this.chance = chance;
-        desc = $"${chance}% chance to increase Attack Dmg by ${mult}%";
-        title = "RNG Attack";
-        type = "Health";
+        desc = $"{chance}% chance to increase Attack Dmg by {mult}%";
+        title = "RNG Strength";
+        type = "Strength";
     }
 
     public override void Perform(Unit player) {

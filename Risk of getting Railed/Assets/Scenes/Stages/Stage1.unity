@@ -520,7 +520,6 @@ MonoBehaviour:
   LoseScreen: {fileID: 560303301}
   BuffScreen: {fileID: 631846085}
   ground: -4.1
-  OST: {fileID: 1833365221}
   state: 0
 --- !u!4 &617789911
 Transform:
@@ -3329,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3166954133627738260, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_Name
-      value: MainGUI
+      value: TrueMainGUI
       objectReference: {fileID: 0}
     - target: {fileID: 4470913314213301369, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_Pivot.x
