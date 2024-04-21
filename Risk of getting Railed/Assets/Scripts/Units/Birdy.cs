@@ -10,8 +10,8 @@ public class Birdy : Unit
 
         Moves = new Move[3];
 
-        Moves[0] = new EggGun();
+        Moves[0] = new BirdSpin();
         Moves[1] = new EggBomb();
-        Moves[2] = new BirdSpin();
+        Moves[2] = new EggGun();
     }
 }

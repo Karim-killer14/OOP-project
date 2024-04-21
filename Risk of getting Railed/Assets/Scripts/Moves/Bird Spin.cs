@@ -2,7 +2,7 @@
 
 public class BirdSpin : Move
 {
-    private readonly int damage = 40;
+    private readonly int damage = 25;
     public BirdSpin() : base("Bird Spin", 0) { }
 
     public override bool Perform(Unit performer)
