@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d35ccc5765a9df44b8fd706ca6388e5c
+guid: cd281f45b31d04d409a567c6a0dd72af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4885298761302449938
-    second: wallpaperflare.com_wallpaper_0
+      213: 2533877182857200814
+    second: wallpaperflare.com_wallpaper 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -165,7 +165,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wallpaperflare.com_wallpaper_0
+      name: wallpaperflare.com_wallpaper 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee069e6f8aee33cb0800000000000000
-      internalID: -4885298761302449938
+      spriteID: ea4cbac6fd32a2320800000000000000
+      internalID: 2533877182857200814
       vertices: []
       indices: 
       edges: []
