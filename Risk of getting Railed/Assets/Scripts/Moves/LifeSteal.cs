@@ -12,11 +12,9 @@ class LifeSteal : Move
 
         int healDmg = dmgValues[new System.Random().Next(dmgValues.Length)];
         performer.CurrentHP += healDmg;
-        GameObject.Find("Hand Summon").GetComponent<Animator>().SetTrigger("Hand Attack");
+        GameObject.Find("Hand Summon").GetComponent<Animator>().SetBool("Hand Attack", true);
         performer.enemy.TakeDamage(healDmg);
-
-
-
+       
         return true;
     }
 }

@@ -7,6 +7,7 @@ public class DeathBringer : Unit
         YPos = -1.39f;
         UnitName = "DeathBringer Sabry";
         MaxHP = 300;
+        CurrentSH = 0;
         Moves = new Move[3];
 
         

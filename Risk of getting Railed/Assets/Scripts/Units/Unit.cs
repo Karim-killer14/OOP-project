@@ -57,6 +57,7 @@ public class Unit : MonoBehaviour {
         get { return currentSH; }
         set {
             currentSH = value;
+            Debug.Log($"SH value ={currentSH}");
         }
     }
     public void TakeDamage(float dmg) {
