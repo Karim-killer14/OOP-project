@@ -3,10 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-using Unity.VisualScripting;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
 
@@ -23,10 +20,10 @@ public class BattleSystem : MonoBehaviour {
     private Dictionary<int, GameObject> MoveBtnDict = new();
 
     Buff[][] buffs = new Buff[][] {
-            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
-            new Buff[]{},
-            new Buff[]{},
-            new Buff[]{},
+            new Buff[]{}, // sabry level
+            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)}, // rick level
+            new Buff[]{}, // fire lord level
+            new Buff[]{}, // 
             new Buff[]{},
             new Buff[]{},
             new Buff[]{},
@@ -165,8 +162,14 @@ public class BattleSystem : MonoBehaviour {
         yield return new WaitForSeconds(1.7f);
 
 
-        string sceneName = SceneManager.GetActiveScene().name;
-        Buff[] options = buffs[int.Parse(sceneName[^1..]) - 1];
+
+        int id;
+        bool success = int.TryParse(gameObject.tag.Substring(3), out id);
+
+        Buff[] options = { };
+
+        if (success)
+            options = buffs[id];
 
         if (options.Length <= 0) {
             WinScreen.SetActive(true);

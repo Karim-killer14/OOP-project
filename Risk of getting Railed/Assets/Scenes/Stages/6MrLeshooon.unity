@@ -1563,7 +1563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100783769518748191, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2073,7 +2073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6614415681960046084, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_text
-      value: Stage 3
+      value: Stage 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614415681960046084, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
+      propertyPath: m_fontSize
+      value: 42.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
