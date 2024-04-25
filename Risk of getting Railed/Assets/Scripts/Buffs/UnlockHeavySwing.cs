@@ -1,6 +1,6 @@
 
 public class UnlockHeavySwing : Buff {
-    public UnlockHeavySwing() { 
+    public UnlockHeavySwing() {
         desc = $"Unlock Heavy Swing";
         title = "New Attack";
         type = "New";
@@ -9,6 +9,6 @@ public class UnlockHeavySwing : Buff {
     public override void Perform(Unit player) {
         base.Perform(player);
 
-        // player.Moves 
+        player.Moves.Add(new HeavySwing());
     }
 }

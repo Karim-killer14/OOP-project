@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class LightSwing : Move {
-    private readonly int damage = 20 * 1000;
+    private readonly int damage = 20;
     public LightSwing() : base("Light Swing", 0) { }
 
     public override bool Perform(Unit performer) {
