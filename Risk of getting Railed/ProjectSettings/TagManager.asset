@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - ID_0
+  - ID_1
+  - ID_2
+  - ID_3
+  - ID_4
+  - ID_5
+  - ID_6
   layers:
   - Default
   - TransparentFX
