@@ -20,8 +20,8 @@ public class BattleSystem : MonoBehaviour {
     private Dictionary<int, GameObject> MoveBtnDict = new();
 
     Buff[][] buffs = new Buff[][] {
-            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
             new Buff[]{}, // sabry level
+            new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
             new Buff[]{}, // fire lord level
             new Buff[]{}, // 
             new Buff[]{},

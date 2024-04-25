@@ -6,7 +6,7 @@ class RngAttackDmg : Buff {
         this.chance = chance;
         desc = $"{chance}% chance to increase Attack Dmg by {mult}%";
         title = "RNG Strength";
-        type = "Strength";
+        type = "Luck";
     }
 
     public override void Perform(Unit player) {
