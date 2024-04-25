@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
-    public void Shake(float duration = 0.5f, float magnitude = 0.15f, float wait = 0) {
+    public void Shake(float duration, float magnitude, float wait = 0) {
         StartCoroutine(ShakeNumerator(duration, magnitude, wait));
     }
 

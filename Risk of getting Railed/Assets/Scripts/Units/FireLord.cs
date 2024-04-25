@@ -12,6 +12,6 @@ public class FireLord : Unit {
 
         Moves = new Move[2];
         Moves[0] = new FireSplash(fireBreathSnd);
-        Moves[1] = new FireStomp(stompSnd, Camera.main.GetComponent<CameraShake>());
+        Moves[1] = new FireStomp(stompSnd);
     }
 }
