@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class HeavySwing : Move {
-    private readonly int damage = 90 * 9999;
+    private readonly int damage = 90;
 
     public HeavySwing() : base("Heavy Swing", 5) { 
     }

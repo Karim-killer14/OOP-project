@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, WAIT }
@@ -20,14 +19,13 @@ public class BattleSystem : MonoBehaviour {
     private Dictionary<int, GameObject> MoveBtnDict = new();
 
     Buff[][] buffs = new Buff[][] {
-            new Buff[]{}, // sabry level
+            new Buff[]{new UnlockHeavySwing()}, // sabry level
             new Buff[]{new IncreaseDmg(10), new IncreaseMaxHP(10), new RngAttackDmg(50, 50)},
             new Buff[]{}, // fire lord level
-            new Buff[]{}, // 
-            new Buff[]{},
-            new Buff[]{},
-            new Buff[]{},
-            new Buff[]{},
+            new Buff[]{}, // king sewer
+            new Buff[]{}, // death bringer
+            new Buff[]{}, // mr leshooon
+            new Buff[]{}, // BIRD STAGE
         };
 
     private Unit playerUnit;

@@ -1,8 +1,5 @@
-using UnityEngine;
-using UnityEngine.UI;
-
 public class IncreaseDmg : Buff {
-    private readonly float val;
+    private float val;
 
     public IncreaseDmg(float val) {
         desc = $"Increase damage by {val}%";
