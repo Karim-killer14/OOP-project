@@ -119,7 +119,7 @@ public class BattleSystem : MonoBehaviour {
     }
 
     void LoadPlayerMoves() {
-        for (int i = 0; i < playerUnit.Moves.Length; i++) {
+        for (int i = 0; i < playerUnit.Moves.Count; i++) {
             Move move = playerUnit.Moves[i];
             GameObject obj = Instantiate(moveBtnPrefab);
             MoveBtnDict.Add(i, obj);
