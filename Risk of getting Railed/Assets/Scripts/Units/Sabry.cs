@@ -7,10 +7,8 @@ public class Sabry : Unit {
         UnitName = "Sabry";
         MaxHP = 100;
 
-        Moves = new Move[3];
-
-        Moves[0] = new LightSwing();
-        Moves[1] = new Heal();
-        Moves[2] = new HeavySwing();
+        Moves.Add(new LightSwing());
+        Moves.Add(new Heal());
+        Moves.Add(new HeavySwing());
     }
 }

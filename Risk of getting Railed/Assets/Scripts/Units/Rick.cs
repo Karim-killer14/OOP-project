@@ -8,9 +8,8 @@ public class Rick : Unit {
         YPos = -2.0f;
         UnitName = "Rick";
         MaxHP = 300;
-        Moves = new Move[2];
 
-        Moves[0] = new SayGoodbye(sayGoodbyeSnd);
-        Moves[1] = new RickScream(rickScreamSnd);
+        Moves.Add(new SayGoodbye(sayGoodbyeSnd));
+        Moves.Add(new RickScream(rickScreamSnd));
     }
 }

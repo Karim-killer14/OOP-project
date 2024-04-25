@@ -1,6 +1,7 @@
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class Unit : MonoBehaviour {
     private float dmgReduction = 0;
@@ -25,7 +26,7 @@ public class Unit : MonoBehaviour {
     }
 
     public string UnitName { get; set; }
-    public Move[] Moves { get; set; }
+    public List<Move> Moves { get; set; }
     private float currentHP;
     private float maxHP;
     private float currentSH;
@@ -82,8 +83,8 @@ public class Unit : MonoBehaviour {
     }
     public void aiAttack() {
         System.Random rand = new();
-        int i = rand.Next(Moves.Length);
-        while (!Moves[i].CanUse()) i = rand.Next(Moves.Length);
+        int i = rand.Next(Moves.Count);
+        while (!Moves[i].CanUse()) i = rand.Next(Moves.Count);
 
         Moves[i].Perform(this);
 
