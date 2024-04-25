@@ -27,6 +27,8 @@ public class Unit : MonoBehaviour {
 
     public string UnitName { get; set; }
     public List<Move> Moves { get; set; } = new List<Move>();
+    public List<string> Teammates { get; set; } = new List<string>();
+    protected bool hasTeam = false;
     private float currentHP;
     private float maxHP;
     private float currentSH;
@@ -58,7 +60,6 @@ public class Unit : MonoBehaviour {
         get { return currentSH; }
         set {
             currentSH = value;
-            Debug.Log($"SH value ={currentSH}");
         }
     }
 
@@ -74,6 +75,14 @@ public class Unit : MonoBehaviour {
             animator.SetTrigger("takeHit");
             CurrentHP -= totdmg - (DmgReduction * totdmg) + totdmg * (Burn / 3.0f);
             Burn--;
+            if (hasTeam == true)
+            {
+                Debug.Log("TEAM EXIStS");
+                for(int i = 0; i<Teammates.Count; i++)
+                {
+                    GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("takeHit");
+                }
+            }
         }
         if (CurrentHP <= 0) animator.SetTrigger("dead");
     }

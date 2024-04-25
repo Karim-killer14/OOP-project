@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &137115277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.030430678
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012571057499485405, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866850377247500083, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
+      propertyPath: m_Name
+      value: Sewer Dwellers
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c54ec13aec7fa841a967a9fdc737d4f, type: 3}
 --- !u!1001 &204626621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -947,3 +1004,4 @@ SceneRoots:
   - {fileID: 1641108116}
   - {fileID: 1039492104}
   - {fileID: 2091678969}
+  - {fileID: 137115277}

@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class Cave_Dwellers : Unit {
-    private void Awake() {
+public class Sewer_Dwellers : Unit
+{
+    private void Awake()
+    {
         YPos = -1.88f;
         UnitName = "Sewer Dwellers";
         MaxHP = 500;
+        hasTeam = true;
+        Teammates.Add("Flying Eye");
+
 
         Moves.Add(new LightSwing());
         Moves.Add(new SkeleShield());

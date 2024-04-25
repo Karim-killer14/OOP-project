@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3012571057499485405}
   - component: {fileID: 5280767629584716171}
-  - component: {fileID: 8195826351311022482}
   - component: {fileID: 2852110174507494759}
+  - component: {fileID: 8267309533265651288}
   m_Layer: 0
   m_Name: Sewer Dwellers
   m_TagString: Untagged
@@ -90,21 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8195826351311022482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4866850377247500083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf4074a6fc58ae41aa98d0a88cf6611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  animator: {fileID: 0}
-  dmgMultiplier: 1
 --- !u!95 &2852110174507494759
 Animator:
   serializedVersion: 7
@@ -127,6 +112,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8267309533265651288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866850377247500083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f31e032a36f3834f895e59ebd012c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  animator: {fileID: 0}
+  dmgMultiplier: 1
 --- !u!1001 &6594792906158020924
 PrefabInstance:
   m_ObjectHideFlags: 0
