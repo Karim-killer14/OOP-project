@@ -197,7 +197,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wallpaperflare.com_wallpaper 1_0: 2533877182857200814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

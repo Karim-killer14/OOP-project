@@ -15,17 +15,26 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelsScene.unity
     guid: 88118a90784d7b648a2305a534e42f57
   - enabled: 1
-    path: Assets/Scenes/Stages/Stage1.unity
+    path: Assets/Scenes/Stages/1Sabry.unity
     guid: 806be19dee0af2942bfac6dda45f6231
   - enabled: 1
-    path: Assets/Scenes/Stages/dupe stage2.unity
-    guid: 4041511fe7e05134e82793bf7729e3bb
+    path: Assets/Scenes/Stages/2Rick.unity
+    guid: ade1e1c4be199ac4d86b3805dca5238b
   - enabled: 1
-    path: Assets/Scenes/Stages/Stage2.unity
+    path: Assets/Scenes/Stages/3FireLord.unity
     guid: ee6fbda7de3e3824ba27c8db53df14ee
   - enabled: 1
-    path: Assets/Scenes/Stages/Rick stage.unity
-    guid: ade1e1c4be199ac4d86b3805dca5238b
+    path: Assets/Scenes/Stages/6MrLeshooon.unity
+    guid: 4041511fe7e05134e82793bf7729e3bb
+  - enabled: 1
+    path: Assets/Scenes/Stages/5DeathBringer.unity
+    guid: 193a1106a80fe6d4ab442995db042f08
+  - enabled: 1
+    path: Assets/Scenes/Stages/4King's Sewers.unity
+    guid: 28104d57c2b9cab4b97b4dd70aee9257
+  - enabled: 1
+    path: Assets/Scenes/Stages/7BIRD_STAGE.unity
+    guid: 63af2ca1a3cbc4f4590e26334babc0ef
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: d4c37d041055f3a42832f2bcf6f43b90
