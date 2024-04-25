@@ -26,7 +26,7 @@ public class Unit : MonoBehaviour {
     }
 
     public string UnitName { get; set; }
-    public List<Move> Moves { get; set; }
+    public List<Move> Moves { get; set; } = new List<Move>();
     private float currentHP;
     private float maxHP;
     private float currentSH;
@@ -61,6 +61,7 @@ public class Unit : MonoBehaviour {
             Debug.Log($"SH value ={currentSH}");
         }
     }
+
     public void TakeDamage(float dmg) {
         dmg *= this.enemy.dmgMultiplier * (UnityEngine.Random.Range(0.0f, 1.0f) <= this.enemy.RngDmgMultChance ? 1 : 1 / this.enemy.dmgMultiplier);
 
