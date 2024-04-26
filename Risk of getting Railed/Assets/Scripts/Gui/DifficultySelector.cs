@@ -8,8 +8,21 @@ public class DifficultySelector : MonoBehaviour {
     private Button hardBtn;
     private Button startBtn;
     private TMPro.TextMeshProUGUI descriptionText;
-    public int difficulty = 1;
-    public static DifficultySelector Instance;
+    private int difficulty = 1;
+    private DifficultyProps diffProps;
+
+
+
+    private void Awake() {
+        GameObject diffPropsObj = GameObject.Find("DIFF_PROPS");
+        if (!diffPropsObj) {
+            diffPropsObj = new GameObject("DIFF_PROPS");
+
+            diffProps = diffPropsObj.AddComponent<DifficultyProps>();
+            DontDestroyOnLoad(diffPropsObj);
+        }
+        if (!diffProps) diffProps = diffPropsObj.GetComponent<DifficultyProps>();
+    }
 
     void Start() {
         easyBtn = transform.Find("Drizzle").GetComponent<Button>();
@@ -19,11 +32,11 @@ public class DifficultySelector : MonoBehaviour {
         descriptionText = transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>();
 
         easyBtn.onClick.AddListener(() => {
-            SetDifficulty(1, new Color(70, 172, 65), "Drizzle is for those who have severe skill issue and want a baby mode, if you're a baby then this is the mode for you :) \n\nDifficulty Effect : All enemies are weaker (duh)");
+            SetDifficulty(1, new Color(0, 255, 0), "Drizzle is for those who have severe skill issue and want a baby mode, if you're a baby then this is the mode for you :) \n\nDifficulty Effect : All enemies are weaker (duh)");
         });
 
         normalBtn.onClick.AddListener(() => {
-            SetDifficulty(2, new Color(255, 156, 33), "RainStorm is the Base difficulty and its the intended way for this game to be played, if you're new to the game this is the mode for you.\n\nDifficulty Effect : Everything is normal.");
+            SetDifficulty(2, new Color (255, 199, 32), "RainStorm is the Base difficulty and its the intended way for this game to be played, if you're new to the game this is the mode for you.\n\nDifficulty Effect : Everything is normal.");
         });
 
         hardBtn.onClick.AddListener(() => {
@@ -40,5 +53,18 @@ public class DifficultySelector : MonoBehaviour {
         this.difficulty = difficultyId;
         descriptionText.text = description;
         descriptionText.color = color;
+
+        if (difficulty == 1) {
+            diffProps.EnemyAttackMultiplier = 0.6f;
+            diffProps.PlrAttackMultiplier = 1.5f;
+        }
+        else if (difficulty == 2) {
+            diffProps.EnemyAttackMultiplier = 1;
+            diffProps.PlrAttackMultiplier = 1;
+        }
+        else if (difficulty == 1) {
+            diffProps.EnemyAttackMultiplier = 1.5f;
+            diffProps.PlrAttackMultiplier = 0.9f;
+        }
     }
 }
