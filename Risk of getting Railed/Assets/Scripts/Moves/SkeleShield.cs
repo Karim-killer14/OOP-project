@@ -2,7 +2,7 @@
 
 public class SkeleShield : Move
 {
-    public float shield = 4;
+    public float shield = 30;
     public SkeleShield() : base("SkeleShield", 4) { }
 
     public override bool Perform(Unit performer)

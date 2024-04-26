@@ -77,14 +77,23 @@ public class Unit : MonoBehaviour {
             Burn--;
             if (hasTeam == true)
             {
-                Debug.Log("TEAM EXIStS");
                 for(int i = 0; i<Teammates.Count; i++)
                 {
                     GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("takeHit");
                 }
             }
         }
-        if (CurrentHP <= 0) animator.SetTrigger("dead");
+        if (CurrentHP <= 0)
+        {
+            animator.SetTrigger("dead");
+            if (hasTeam == true)
+            {
+                for (int i = 0; i < Teammates.Count; i++)
+                {
+                    GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("dead");
+                }
+            }
+        }
     }
     public virtual void IncrementCooldown() {
         foreach (var move in Moves) {

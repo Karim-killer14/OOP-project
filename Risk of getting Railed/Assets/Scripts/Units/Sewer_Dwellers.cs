@@ -9,15 +9,13 @@ public class Sewer_Dwellers : Unit
         MaxHP = 500;
         hasTeam = true;
         Teammates.Add("Flying Eye");
+        Teammates.Add("Mushroom Dude");
 
-
-        Moves.Add(new LightSwing());
-        Moves.Add(new SkeleShield());
-        Moves.Add(new ShroomHeal());
-
-        //if (GameObject.Find("BattleSystem").GetComponent<BattleSystem>().state == BattleState.WON)
-        //{
-
-        //}
+        //Moves.Add(new SkeleShield());
+        //Moves.Add(new ShroomHeal());
+        //Moves.Add(new FlyingBite());
+        //Moves.Add(new LightSwing());
+        //Moves.Add(new HeavySwing());
+        Moves.Add(new FlyingSpin());
     }
 }
