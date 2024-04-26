@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,9 @@ public class DifficultySelector : MonoBehaviour {
 
 
     private void Awake() {
-        GameObject diffPropsObj = GameObject.Find("DIFF_PROPS");
+        GameObject diffPropsObj = GameObject.Find("DIFFICULTY_PROPERTIES");
         if (!diffPropsObj) {
-            diffPropsObj = new GameObject("DIFF_PROPS");
+            diffPropsObj = new GameObject("DIFFICULTY_PROPERTIES");
 
             diffProps = diffPropsObj.AddComponent<DifficultyProps>();
             DontDestroyOnLoad(diffPropsObj);
@@ -32,15 +33,15 @@ public class DifficultySelector : MonoBehaviour {
         descriptionText = transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>();
 
         easyBtn.onClick.AddListener(() => {
-            SetDifficulty(1, new Color(0, 255, 0), "Drizzle is for those who have severe skill issue and want a baby mode, if you're a baby then this is the mode for you :) \n\nDifficulty Effect : All enemies are weaker (duh)");
+            SetDifficulty(1, new Color32(0x73, 0xFF, 0x57, 0xFF), new Color32(0x46, 0xAC, 0x41, 0xFF), "Drizzle is for those who have severe skill issue and want a baby mode, if you're a baby then this is the mode for you :) \n\nDifficulty Effect : All enemies are weaker (duh)");
         });
 
         normalBtn.onClick.AddListener(() => {
-            SetDifficulty(2, new Color (255, 199, 32), "RainStorm is the Base difficulty and its the intended way for this game to be played, if you're new to the game this is the mode for you.\n\nDifficulty Effect : Everything is normal.");
+            SetDifficulty(2, new Color32(0xFF, 0xC7, 0x57, 0xFF), new Color32(0xFF, 0x9C, 0x21, 0xFF), "RainStorm is the Base difficulty and its the intended way for this game to be played, if you're new to the game this is the mode for you.\n\nDifficulty Effect : Everything is normal.");
         });
 
         hardBtn.onClick.AddListener(() => {
-            SetDifficulty(3, new Color(255, 0, 0), "Monsoon is.... Hell and you will be screaming, Straight up don't play this if it's your first time (unless you hate yourself)\n\nDifficulty Effect : x2 Enemy Health and x1.5 enemy strength \n\nGood luck, you will need it");
+            SetDifficulty(3, new Color32(0xF7, 0x51, 0x37, 0xFF), new Color32(0xBA, 0x00, 0x00, 0xFF), "Monsoon is.... Hell and you will be screaming, Straight up don't play this if it's your first time (unless you hate yourself)\n\nDifficulty Effect : x2 Enemy Health and x1.5 enemy strength \n\nGood luck, you will need it");
         });
 
         startBtn.onClick.AddListener(() => {
@@ -49,22 +50,25 @@ public class DifficultySelector : MonoBehaviour {
         });
     }
 
-    void SetDifficulty(int difficultyId, Color color, string description) {
+
+    void SetDifficulty(int difficultyId, Color32 startColor, Color32 endColor, string description) {
         this.difficulty = difficultyId;
         descriptionText.text = description;
-        descriptionText.color = color;
+
+        VertexGradient colorGradient = new VertexGradient(startColor, startColor, endColor, endColor);
+        descriptionText.colorGradient = colorGradient;
 
         if (difficulty == 1) {
-            diffProps.EnemyAttackMultiplier = 0.6f;
-            diffProps.PlrAttackMultiplier = 1.5f;
+            diffProps.EnemyAtkMult = 0.6f;
+            diffProps.PlrAtkMult = 1.5f;
         }
         else if (difficulty == 2) {
-            diffProps.EnemyAttackMultiplier = 1;
-            diffProps.PlrAttackMultiplier = 1;
+            diffProps.EnemyAtkMult = 1;
+            diffProps.PlrAtkMult = 1;
         }
-        else if (difficulty == 1) {
-            diffProps.EnemyAttackMultiplier = 1.5f;
-            diffProps.PlrAttackMultiplier = 0.9f;
+        else if (difficulty == 3) {
+            diffProps.EnemyAtkMult = 1.5f;
+            diffProps.PlrAtkMult = 0.9f;
         }
     }
 }
