@@ -9,8 +9,6 @@ public class LightSwing : Move {
 
         performer.enemy.TakeDamage(damage);
 
-        Debug.Log(GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>().EnemyAtkMult);
-
         return true;
     }
 }
