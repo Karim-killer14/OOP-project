@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class DeathSwing : Move {
-    private readonly int[] dmgValues = { 20, 40, 40, 40, 75, 75, 75, 100 };
+    private readonly int[] dmgValues = { 20, 20,30,30,30,30,40, 40, 40, 40, 40,50 , 50 };
     private CameraShake camShake;
     public DeathSwing() : base("Death Swing", 0) {
         camShake = Camera.main.GetComponent<CameraShake>();

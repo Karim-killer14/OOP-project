@@ -210,15 +210,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lmao imagine losing at stage 1
+  m_text: 'Now the Deathbringer claims your soul,
 
-    go play some fortnite you fucking
-    kid
-
-
-
-
-    or continue suffering here >:)'
+    as punishment for disturbing
+    its cave.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

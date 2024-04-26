@@ -576,6 +576,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 4337486240017576771, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
+      propertyPath: m_text
+      value: 'Congrats, you have conquered The DeathBringer!
+
+
+        Now you can
+        continue your trailblaze.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6871363085766673879, guid: 2b4cc39b103c79241bdeefd7e57be56f, type: 3}
       propertyPath: m_Name
       value: WinScreen
@@ -624,8 +632,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1281625330998402416, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_text
-      value: "The DeathBringer claimed yet another soul, and it was you \n\nGitGud
-        scrub\n\n\nor go ahead and quit (ya loser)"
+      value: 'Now the Deathbringer claims your soul,
+
+        as punishment for disturbing
+        its cave.'
       objectReference: {fileID: 0}
     - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
