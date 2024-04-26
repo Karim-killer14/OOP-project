@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 class LifeSteal : Move {
-    private readonly int[] dmgValues = { 50, 100 };
+    private readonly int[] dmgValues = { 25, 25,50 };
     private CameraShake camShake;
     public LifeSteal() : base("Life Steal", 5) {
         camShake = Camera.main.GetComponent<CameraShake>();
