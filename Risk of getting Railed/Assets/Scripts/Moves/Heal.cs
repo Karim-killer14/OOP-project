@@ -1,8 +1,11 @@
 using UnityEngine;
 
 public class Heal : Move {
-    private readonly int heal = 40;
-    public Heal() : base("Heal", 3) { }
+    private float heal = 40;
+
+    public Heal(float dmgMult = 1) : base("Heal", 3) {
+        heal *= dmgMult;
+    }
 
     public override bool Perform(Unit performer) {
         if (!base.Perform(performer)) return false;

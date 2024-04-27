@@ -2,7 +2,9 @@
 
 public class Shield : Move {
     public float shield;
-    public Shield() : base("Shield", 4) { }
+    public Shield(float dmgMult = 1) : base("Shield", 4) {
+        shield *= dmgMult;
+    }
 
     public override bool Perform(Unit performer) {
         if (!base.Perform(performer)) return false;

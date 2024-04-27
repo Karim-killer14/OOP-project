@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class LightSwing : Move {
-    private readonly int damage = 20;
-    public LightSwing() : base("Light Swing", 0) { }
+    private float damage = 25;
+    public LightSwing(float dmgMult=1) : base("Light Swing", 0) {
+        damage *= dmgMult;
+    }
 
     public override bool Perform(Unit performer) {
         if (!base.Perform(performer)) return false;

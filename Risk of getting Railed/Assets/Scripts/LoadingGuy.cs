@@ -11,6 +11,16 @@ public class LoadingGuy : MonoBehaviour {
         StartCoroutine(LoadSceneAsync(sceneID));
     }
 
+    public void DestroyPlayer(){
+        Destroy(GameObject.Find("Player"));
+    }
+
+    public void SetPlayerIdle() {
+        GameObject player = GameObject.Find("Player");
+        if(player)
+            player.GetComponent<Animator>().SetTrigger("how th ehell to cancel it");
+    }
+
     IEnumerator LoadSceneAsync(int sceneID) {
         GameObject winScreen = GameObject.Find("WinScreen");
         GameObject loseScreen = GameObject.Find("LoseScreen");

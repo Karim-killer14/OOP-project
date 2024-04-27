@@ -2,12 +2,14 @@ using UnityEngine;
 
 class RickScream : Move {
     private readonly AudioSource sound;
-    private readonly int damage = 25;
+    private float damage = 25;
     private CameraShake camShake;
 
-    public RickScream(AudioSource sound) : base("Rick Scream", 0) {
+    public RickScream(AudioSource sound, float dmgMult) : base("Rick Scream", 0) {
         this.sound = sound;
         camShake = Camera.main.GetComponent<CameraShake>();
+
+        damage *= dmgMult;
     }
 
     public override bool Perform(Unit performer) {
