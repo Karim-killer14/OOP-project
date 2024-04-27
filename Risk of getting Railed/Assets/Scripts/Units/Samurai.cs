@@ -8,7 +8,7 @@ public class Samurai : Unit {
         MaxHP = 200;
         CurrentSH = 0;
 
-        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>();
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.PlrAtkMult : 1;
 
         Moves.Add(new LightSwing(dmgMult));

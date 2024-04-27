@@ -405,6 +405,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
+--- !u!114 &550368621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2566906083478493776, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
+  m_PrefabInstance: {fileID: 550368620}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550368622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355a662ff11be504f94ec1045ea05b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &550368622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3577923642290684490, guid: 46a0bd3be3910bd4081d69acf1198dbb, type: 3}
+  m_PrefabInstance: {fileID: 550368620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039492102
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +849,50 @@ PrefabInstance:
 
         They have taken all
         that belongs to you.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 550368622}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 550368621}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 550368621}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DestroyPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: LoadingGuy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5741103834971507581, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_LocalPosition.x

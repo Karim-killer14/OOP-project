@@ -6,7 +6,7 @@ public class Birdy : Unit {
         UnitName = "Birdy Sabry";
         MaxHP = 300;
         
-        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>();
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
 
         Moves.Add(new BirdSpin(dmgMult));
