@@ -2,7 +2,7 @@ using UnityEngine;
 
 class RickScream : Move {
     private readonly AudioSource sound;
-    private float damage = 25 * 9999;
+    private float damage = 25;
     private CameraShake camShake;
 
     public RickScream(AudioSource sound, float dmgMult) : base("Rick Scream", 0) {
