@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class DifficultySelector : MonoBehaviour {
     [SerializeField] LoadingGuy loadingGuy;
+    [SerializeField] GameObject Tutorial;
     private Button easyBtn;
     private Button normalBtn;
     private Button hardBtn;
@@ -46,7 +47,7 @@ public class DifficultySelector : MonoBehaviour {
 
         startBtn.onClick.AddListener(() => {
             Debug.Log($"Hello World {difficulty}");
-            loadingGuy.LoadScene(2);
+            Tutorial.SetActive(true);
         });
     }
 

@@ -3382,8 +3382,8 @@ MonoBehaviour:
     (begging me) for another chance at clearing the Dungeon'
   - 'Mahito: this will be the enemies Health, your goal is to set it to zero ....KILLING
     IT IN THE PROCESS (and making me stronger)'
-  - 'Mahito: this is the turn counter, you see this universe operates via turns,
-    you will always start first followed by the enemy turn'
+  - 'Mahito: Fun Fact: this universe operates via turns, you will always start/ take
+    action first followed by the enemy turn then your turn till one of you dies'
   - 'Mahito: when its your turn you will be able to use your moves but be wary that
     they have a cooldown (number shown above move text) when its at zero you can
     use it, otherwise you will have to wait for the cooldown .'
@@ -3393,6 +3393,7 @@ MonoBehaviour:
   - 'Player: what''s bro yappin about'
   - 'Mahito: Don''t mind me friend, now go blaze this trail'
   - 'Mahito: you got this (you will get crushed so hard (hahahahahahahahahahahahahahahahahahahahahahahah)'
+  - GOOD LUCK
   textSpeed: 0.05
   Phealth: {fileID: 1331835867}
   Ehealth: {fileID: 2117024983}

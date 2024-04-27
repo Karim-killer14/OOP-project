@@ -20,12 +20,11 @@ public class BattleSystem : MonoBehaviour {
 
     Buff[][] buffs = new Buff[][] {
             new Buff[]{new UnlockHeavySwing()}, // sabry level
-            new Buff[]{new IncreaseDmg(25), new IncreaseMaxHP(25), new RngAttackDmg(100, 50)},
-            new Buff[]{}, // fire lord level
-            new Buff[]{}, // king sewer
-            new Buff[]{}, // death bringer
-            new Buff[]{}, // mr leshooon
-            new Buff[]{}, // BIRD STAGE
+            new Buff[]{new IncreaseDmg(30), new IncreaseMaxHP(50), new RngAttackDmg(75, 69)},
+            new Buff[]{new IncreaseMaxHP(125)}, // fire lord level
+            new Buff[]{new IncreaseDmg(50)}, // king sewer
+            new Buff[]{new IncreaseDmg(40), new IncreaseMaxHP(30)}, // death bringer
+            new Buff[]{new RngAttackDmg(1, 1)}, // BIRD STAGE
         };
 
     private Unit playerUnit;

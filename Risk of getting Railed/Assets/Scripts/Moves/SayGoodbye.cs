@@ -3,7 +3,7 @@ using UnityEngine;
 
 class SayGoodbye : Move {
     private readonly AudioSource sound;
-    private float[] dmgValues = { 0, 35, 80 };
+    private float[] dmgValues = { 20, 50, 80 };
     private CameraShake camShake;
 
     public SayGoodbye(AudioSource sound, float dmgMult) : base("Say Goodbye", 3) {
