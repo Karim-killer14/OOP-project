@@ -8,6 +8,7 @@ public class LightSwing : Move {
         if (!base.Perform(performer)) return false;
 
         performer.enemy.TakeDamage(damage);
+
         return true;
     }
 }
