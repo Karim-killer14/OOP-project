@@ -26,7 +26,6 @@ public class UnlockFireStomp : Buff {
             audioSource.name = "FIRE_SFX";
             audioSource.clip = audioClip;
         }
-
         player.Moves.Add(new FireStomp(audioSource, dmgMult));
     }
 }
