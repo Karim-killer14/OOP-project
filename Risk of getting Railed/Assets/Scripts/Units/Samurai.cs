@@ -6,7 +6,6 @@ public class Samurai : Unit {
         YPos = -2.18f;
         UnitName = "Samurai";
         MaxHP = 200;
-        CurrentSH = 0;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.PlrAtkMult : 1;

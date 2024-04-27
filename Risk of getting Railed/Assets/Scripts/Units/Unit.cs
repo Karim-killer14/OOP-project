@@ -31,8 +31,7 @@ public class Unit : MonoBehaviour {
     protected bool hasTeam = false;
     private float currentHP;
     private float maxHP;
-    private float currentSH;
-    private float maxSH;//if max hp is 100 then max sh is maybe 200 (this is only useful for shield slider) and enemy shields ig
+    public float CurrentShield { get; set; } = 0;
 
     public Unit enemy;
     public Animator animator;
@@ -52,44 +51,31 @@ public class Unit : MonoBehaviour {
             currentHP = math.min(math.max(currentHP, 0), MaxHP);
         }
     }
-    public float MaxSH {
-        get { return maxSH; }
-        set { maxSH = value; }
-    }
-    public float CurrentSH {
-        get { return currentSH; }
-        set {
-            currentSH = value;
-        }
-    }
 
     public void TakeDamage(float dmg) {
         dmg *= this.enemy.dmgMultiplier * (UnityEngine.Random.Range(0.0f, 1.0f) <= this.enemy.RngDmgMultChance ? 1 : 1 / this.enemy.dmgMultiplier);
 
-        if (CurrentSH >= dmg) {
-            CurrentSH -= dmg;
+        if (CurrentShield != 0) {
+            CurrentShield--;
+            if (CurrentShield <= 0) {
+                GameObject shield = this.transform.Find("Shield").gameObject;
+                Destroy(shield);
+            }
+            return;
         }
 
-        else if (dmg > CurrentSH) {
-            float totdmg = dmg - CurrentSH;
-            animator.SetTrigger("takeHit");
-            CurrentHP -= totdmg - (DmgReduction * totdmg) + totdmg * (Burn / 3.0f);
-            Burn--;
-            if (hasTeam == true)
-            {
-                for(int i = 0; i<Teammates.Count; i++)
-                {
-                    GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("takeHit");
-                }
+        animator.SetTrigger("takeHit");
+        CurrentHP -= dmg - (DmgReduction * dmg) + dmg * (Burn / 3.0f);
+        Burn--;
+        if (hasTeam == true) {
+            for (int i = 0; i < Teammates.Count; i++) {
+                GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("takeHit");
             }
         }
-        if (CurrentHP <= 0)
-        {
+        if (CurrentHP <= 0) {
             animator.SetTrigger("dead");
-            if (hasTeam == true)
-            {
-                for (int i = 0; i < Teammates.Count; i++)
-                {
+            if (hasTeam == true) {
+                for (int i = 0; i < Teammates.Count; i++) {
                     GameObject.Find(Teammates[i]).GetComponent<Animator>().SetTrigger("dead");
                 }
             }
