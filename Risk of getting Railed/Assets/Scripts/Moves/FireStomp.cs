@@ -6,7 +6,7 @@ public class FireStomp : Move {
     private CameraShake camShake;
     private float damage = 30;
 
-    public FireStomp(AudioSource stompSnd, float dmgMult) : base("Fire Stomp", 0) {
+    public FireStomp(AudioSource stompSnd, float dmgMult=1) : base("Fire Stomp", 0) {
         this.stompSnd = stompSnd;
         camShake = Camera.main.GetComponent<CameraShake>();
 

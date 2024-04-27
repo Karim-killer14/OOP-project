@@ -21,7 +21,7 @@ public class BattleSystem : MonoBehaviour {
     Buff[][] buffs = new Buff[][] {
             new Buff[]{new UnlockHeavySwing()}, // sabry level
             new Buff[]{new IncreaseDmg(25), new IncreaseMaxHP(25), new RngAttackDmg(100, 50)},
-            new Buff[]{}, // fire lord level
+            new Buff[]{new UnlockFireSplash(), new UnlockFireStomp()}, // fire lord level
             new Buff[]{}, // king sewer
             new Buff[]{}, // death bringer
             new Buff[]{}, // mr leshooon
@@ -40,7 +40,7 @@ public class BattleSystem : MonoBehaviour {
 
     private void Awake() {
         OST = GameObject.Find("OST").GetComponent<AudioSource>();
-        MainGUI = GameObject.Find("MainGUI");   
+        MainGUI = GameObject.Find("MainGUI");
         playerHUD = MainGUI.transform.Find("PlayerStation/PlayerHUD").GetComponent<BattleHUD>();
         enemyHUD = MainGUI.transform.Find("EnemyStation/EnemyHUD").GetComponent<BattleHUD>();
         movesHolder = MainGUI.transform.Find("PlayerStation/MovesHolder").transform;
