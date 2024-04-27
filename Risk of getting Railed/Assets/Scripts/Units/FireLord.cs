@@ -10,7 +10,10 @@ public class FireLord : Unit {
         UnitName = "Fire Lord";
         MaxHP = 400;
 
-        Moves.Add(new FireSplash(fireBreathSnd));
-        Moves.Add(new FireStomp(stompSnd));
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
+        float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
+
+        Moves.Add(new FireSplash(fireBreathSnd, dmgMult));
+        Moves.Add(new FireStomp(stompSnd, dmgMult));
     }
 }

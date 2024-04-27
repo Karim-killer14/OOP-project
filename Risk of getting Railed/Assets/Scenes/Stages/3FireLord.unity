@@ -1011,6 +1011,14 @@ PrefabInstance:
         (both IRL and In-Game)'
       objectReference: {fileID: 0}
     - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1509679704}
@@ -1018,6 +1026,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1509679703}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1509679703}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
