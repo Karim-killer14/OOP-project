@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 public class DeathSwing : Move {
-    private readonly int[] dmgValues = { 20, 20,30,30,30,30,40, 40, 40, 40, 40,50 , 50 };
+    private float[] dmgValues = { 20, 20,30,30,30,30,40, 40, 40, 40, 40,50 , 50 };
     private CameraShake camShake;
-    public DeathSwing() : base("Death Swing", 0) {
+
+    public DeathSwing(float dmgMult = 1) : base("Death Swing", 0) {
         camShake = Camera.main.GetComponent<CameraShake>();
+
+        for(int i = 0; i < dmgValues.Length; i++) dmgValues[i] *= dmgMult;
     }
 
     public override bool Perform(Unit performer) {

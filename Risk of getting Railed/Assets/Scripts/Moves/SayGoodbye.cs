@@ -3,12 +3,14 @@ using UnityEngine;
 
 class SayGoodbye : Move {
     private readonly AudioSource sound;
-    private readonly int[] dmgValues = { 0, 35, 80 };
+    private float[] dmgValues = { 0, 35, 80 };
     private CameraShake camShake;
 
-    public SayGoodbye(AudioSource sound) : base("Say Goodbye", 3) {
+    public SayGoodbye(AudioSource sound, float dmgMult) : base("Say Goodbye", 3) {
         this.sound = sound;
         camShake = Camera.main.GetComponent<CameraShake>();
+
+        for(int i = 0; i < dmgValues.Length; i++) dmgValues[i] *= dmgMult;
     }
 
     public override bool Perform(Unit performer) {

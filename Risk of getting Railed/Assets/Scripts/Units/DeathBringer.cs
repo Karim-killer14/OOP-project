@@ -6,8 +6,11 @@ public class DeathBringer : Unit {
         UnitName = "DeathBringer Sabry";
         MaxHP = 200;
 
-        Moves.Add(new LifeSteal());
-        Moves.Add(new DeathSwing());
-        Moves.Add(new Heal());
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>();
+        float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
+
+        Moves.Add(new LifeSteal(dmgMult));
+        Moves.Add(new DeathSwing(dmgMult));
+        Moves.Add(new Heal(dmgMult));
     }
 }

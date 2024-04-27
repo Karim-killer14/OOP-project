@@ -7,8 +7,11 @@ public class Sabry : Unit {
         UnitName = "Sabry";
         MaxHP = 100;
 
-        Moves.Add(new LightSwing());
-        Moves.Add(new Heal());
-        Moves.Add(new HeavySwing());
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>();
+        float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
+
+        Moves.Add(new LightSwing(dmgMult));
+        Moves.Add(new Heal(dmgMult));
+        Moves.Add(new HeavySwing(dmgMult));
     }
 }

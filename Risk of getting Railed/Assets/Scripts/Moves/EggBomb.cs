@@ -2,8 +2,11 @@
 
 public class EggBomb : Move
 {
-    private readonly int[] dmgValues = { 35, 35, 35, 35, 35, 35, 35, 100, 100, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 125 }; 
-    public EggBomb() : base("Egg bomb", 5) { }
+    private float[] dmgValues = { 35, 35, 35, 35, 35, 35, 35, 100, 100, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 125 }; 
+    public EggBomb(float dmgMult=1) : base("Egg bomb", 5) { 
+        for(int i = 0; i < dmgValues.Length; i++) dmgValues[i] *= dmgMult;  
+    }
+    
     public override bool Perform(Unit performer)
     {
         if (!base.Perform(performer)) return false;
