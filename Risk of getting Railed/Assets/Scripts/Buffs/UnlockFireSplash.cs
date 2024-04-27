@@ -16,7 +16,18 @@ public class UnlockFireSplash : Buff {
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.PlrAtkMult : 1;
 
-        AudioSource audio = Resources.Load<AudioClip>("Sounds/Moves/fireSFX").GetComponent<AudioSource>();
-        player.Moves.Add(new FireSplash(audio, dmgMult));
+
+        AudioSource audioSource = player.transform.Find("FIRE_SFX")?.GetComponent<AudioSource>();
+
+        if (!audioSource) {
+            AudioClip audioClip = Resources.Load<AudioClip>("Sounds/Moves/HeavyStomp");
+
+            audioSource = player.gameObject.AddComponent<AudioSource>();
+            audioSource.name = "FIRE_SFX";
+            audioSource.clip = audioClip;
+        }
+
+
+        player.Moves.Add(new FireSplash(audioSource, dmgMult));
     }
 }
