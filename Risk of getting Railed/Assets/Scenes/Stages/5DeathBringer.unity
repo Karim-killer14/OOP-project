@@ -2983,7 +2983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe281dfffee39e45a97936c147579f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3908441290037744883, guid: 22723b1ea89740241980929a46da80d5, type: 3}
+  playerPrefab: {fileID: 6714095041394165870, guid: 998ea95ec5877554eab9ecd8e8d248ae, type: 3}
   enemyPrefab: {fileID: 6690286385364826375, guid: b82dd5cc55698404ab95a7c23dcc9d32, type: 3}
   moveBtnPrefab: {fileID: 3625020597034461065, guid: 100fc3923027a264b89b320d0505555b, type: 3}
   buffBtnPrefab: {fileID: 7384251480990309363, guid: 9064250f0fec19945b6c0b90f9cd0cf5, type: 3}

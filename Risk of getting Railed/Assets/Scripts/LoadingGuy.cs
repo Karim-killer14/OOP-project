@@ -18,7 +18,7 @@ public class LoadingGuy : MonoBehaviour {
     public void SetPlayerIdle() {
         GameObject player = GameObject.Find("Player");
         if(player)
-            player.GetComponent<Animator>().SetTrigger("how th ehell to cancel it");
+            player.GetComponent<Animator>().SetTrigger("Idle");
     }
 
     IEnumerator LoadSceneAsync(int sceneID) {

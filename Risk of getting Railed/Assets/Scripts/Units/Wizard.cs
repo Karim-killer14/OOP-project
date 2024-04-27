@@ -1,10 +1,9 @@
 using UnityEngine;
 
-
-public class Samurai : Unit {
+public class Wizard : Unit {
     private void Awake() {
-        YPos = -2.18f;
-        UnitName = "Samurai";
+        YPos = -1.88f;
+        UnitName = "Wizard";
         MaxHP = 200;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
