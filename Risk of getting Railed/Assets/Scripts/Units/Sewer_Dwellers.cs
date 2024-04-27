@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class Sewer_Dwellers : Unit
-{
-    private void Awake()
-    {
+public class Sewer_Dwellers : Unit {
+    private void Awake() {
         YPos = -1.88f;
         UnitName = "Sewer Dwellers";
         MaxHP = 500;
@@ -11,11 +9,14 @@ public class Sewer_Dwellers : Unit
         Teammates.Add("Flying Eye");
         Teammates.Add("Mushroom Dude");
 
-        Moves.Add(new SkeleShield());
-        Moves.Add(new ShroomHeal());
-        Moves.Add(new FlyingBite());
-        Moves.Add(new LightSwing());
-        Moves.Add(new HeavySwing());
-        Moves.Add(new FlyingSpin());
+        DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
+        float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
+
+        Moves.Add(new SkeleShield(dmgMult));
+        Moves.Add(new ShroomHeal(dmgMult));
+        Moves.Add(new FlyingBite(dmgMult));
+        Moves.Add(new LightSwing(dmgMult));
+        Moves.Add(new HeavySwing(dmgMult));
+        Moves.Add(new FlyingSpin(dmgMult));
     }
 }

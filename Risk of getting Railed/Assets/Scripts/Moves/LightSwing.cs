@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LightSwing : Move {
     private float damage = 20;
-    public LightSwing(float dmgMult) : base("Light Swing", 0) {
+    public LightSwing(float dmgMult=1) : base("Light Swing", 0) {
         damage *= dmgMult;
     }
 

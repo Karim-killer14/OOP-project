@@ -2,8 +2,10 @@
 
 public class ShroomHeal : Move
 {
-    private readonly int heal = 40;
-    public ShroomHeal() : base("ShroomHeal", 4) { }
+    private float heal = 40;
+    public ShroomHeal(float dmgMult=1) : base("ShroomHeal", 4) { 
+        heal *= dmgMult;
+    }
 
     public override bool Perform(Unit performer)
     {
