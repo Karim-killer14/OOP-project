@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 
+<<<<<<< HEAD
 public class FlyingSpin : Move {
     private float[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
+=======
+public class FlyingSpin : Move
+{
+    private readonly float[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
+>>>>>>> e753ad6356280318d78dec376808f5175337cf02
     private CameraShake camShake;
 
     public FlyingSpin(float dmgMult) : base("Spin", 5) {
