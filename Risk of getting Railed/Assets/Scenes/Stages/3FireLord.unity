@@ -1005,14 +1005,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1281625330998402416, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_text
-      value: 'Lol bro lost at stage 2
-
-        you sir have some serious skill issue
+      value: 'You just got Roasted
 
 
-
-        GitGud
-        scrub'
+        (both IRL and In-Game)'
       objectReference: {fileID: 0}
     - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1027,6 +1023,26 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363706783695414156, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678290608677672116, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1509679704}
+    - target: {fileID: 3678290608677672116, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1509679703}
+    - target: {fileID: 3678290608677672116, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678290608677672116, guid: 0935f3f7a158ea44d96071fb52f61517, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}

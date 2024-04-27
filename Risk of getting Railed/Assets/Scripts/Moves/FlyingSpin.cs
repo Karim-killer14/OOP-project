@@ -2,7 +2,7 @@
 
 public class FlyingSpin : Move
 {
-    private readonly int[] dmgValues = { 20, 50, 50, 50, 75, 75, 75, 100 };
+    private readonly int[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
     private CameraShake camShake;
     public FlyingSpin() : base("Spin", 5) { }
     

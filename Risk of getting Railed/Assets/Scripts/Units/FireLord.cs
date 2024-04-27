@@ -8,7 +8,7 @@ public class FireLord : Unit {
     private void Awake() {
         YPos = -3.43f;
         UnitName = "Fire Lord";
-        MaxHP = 1000;
+        MaxHP = 400;
 
         Moves.Add(new FireSplash(fireBreathSnd));
         Moves.Add(new FireStomp(stompSnd));
