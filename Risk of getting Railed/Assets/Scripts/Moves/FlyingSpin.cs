@@ -2,7 +2,7 @@
 
 public class FlyingSpin : Move
 {
-    private readonly int[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
+    private readonly float[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
     private CameraShake camShake;
     public FlyingSpin(float dmgMult) : base("Spin", 5) {
         for (int i = 0; i < dmgValues.Length; i++)
