@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class FlyingSpin : Move {
-    private float[] dmgValues = { 20, 50, 50, 50, 75, 75, 75, 100 };
+public class FlyingSpin : Move
+{
+    private readonly int[] dmgValues = { 25, 50, 50, 50, 75, 75, 75, 90 };
     private CameraShake camShake;
     public FlyingSpin(float dmgMult) : base("Spin", 5) {
         for (int i = 0; i < dmgValues.Length; i++)

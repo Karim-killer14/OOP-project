@@ -8,7 +8,7 @@ public class FireLord : Unit {
     private void Awake() {
         YPos = -3.43f;
         UnitName = "Fire Lord";
-        MaxHP = 1000;
+        MaxHP = 400;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
