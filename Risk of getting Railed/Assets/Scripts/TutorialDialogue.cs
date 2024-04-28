@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class TutorialDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public Color Pcolor;
@@ -97,6 +97,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             LoadButton.SetActive(true);
+            
         }
 
     }

@@ -4,7 +4,7 @@ public class Sewer_Dwellers : Unit {
     private void Awake() {
         YPos = -1.88f;
         UnitName = "Sewer Dwellers";
-        MaxHP = 500;
+        MaxHP = 550;
         hasTeam = true;
         Teammates.Add("Flying Eye");
         Teammates.Add("Mushroom Dude");

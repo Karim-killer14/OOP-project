@@ -4,7 +4,7 @@ public class DeathBringer : Unit {
     private void Awake() {
         YPos = -1.39f;
         UnitName = "DeathBringer Sabry";
-        MaxHP = 200;
+        MaxHP = 600;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;

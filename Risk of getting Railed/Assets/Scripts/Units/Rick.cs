@@ -7,7 +7,7 @@ public class Rick : Unit {
     private void Awake() {
         YPos = -2.0f;
         UnitName = "Rick";
-        MaxHP = 250;
+        MaxHP = 300;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
