@@ -7,7 +7,7 @@ public class UnlockFireStomp : Buff {
     public UnlockFireStomp() {
         desc = $"Unlock Fire Stomp";
         title = "New Attack";
-        type = "New";
+        type = "FireStomp";
     }
 
     public override void Perform(Unit player) {
@@ -17,15 +17,11 @@ public class UnlockFireStomp : Buff {
         float dmgMult = diffProps ? diffProps.PlrAtkMult : 1;
 
 
-        AudioSource audioSource = player.transform.Find("FIRE_SFX")?.GetComponent<AudioSource>();
-
-        if (!audioSource) {
+        if (!player.transform.GetComponent<AudioSource>()) {
             AudioClip audioClip = Resources.Load<AudioClip>("Sounds/Moves/HeavyStomp");
-
-            audioSource = player.gameObject.AddComponent<AudioSource>();
-            audioSource.name = "FIRE_SFX";
-            audioSource.clip = audioClip;
+            AudioSource newAudioSource = player.gameObject.AddComponent<AudioSource>();
+            newAudioSource.clip = audioClip;
         }
-        player.Moves.Add(new FireStomp(audioSource, dmgMult));
+        player.Moves.Add(new FireStomp(player.gameObject.GetComponent<AudioSource>(), dmgMult));
     }
 }

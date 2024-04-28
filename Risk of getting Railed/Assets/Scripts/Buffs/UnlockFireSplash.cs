@@ -7,7 +7,7 @@ public class UnlockFireSplash : Buff {
     public UnlockFireSplash() {
         desc = $"Unlock Fire Breathing (gives enemy burn effect that incraeses the damage you deal)";
         title = "New Attack";
-        type = "New";
+        type = "FireSplash";
     }
 
     public override void Perform(Unit player) {
@@ -17,17 +17,13 @@ public class UnlockFireSplash : Buff {
         float dmgMult = diffProps ? diffProps.PlrAtkMult : 1;
 
 
-        AudioSource audioSource = player.transform.Find("FIRE_SFX")?.GetComponent<AudioSource>();
-
-        if (!audioSource) {
-            AudioClip audioClip = Resources.Load<AudioClip>("Sounds/Moves/HeavyStomp");
-
-            audioSource = player.gameObject.AddComponent<AudioSource>();
-            audioSource.name = "FIRE_SFX";
-            audioSource.clip = audioClip;
+        if (!player.transform.GetComponent<AudioSource>()) {
+            AudioClip audioClip = Resources.Load<AudioClip>("Sounds/Moves/fireSFX");
+            AudioSource newAudioSource = player.gameObject.AddComponent<AudioSource>();
+            newAudioSource.clip = audioClip;
         }
 
 
-        player.Moves.Add(new FireSplash(audioSource, dmgMult));
+        player.Moves.Add(new FireSplash(player.transform.GetComponent<AudioSource>(), dmgMult));
     }
 }
