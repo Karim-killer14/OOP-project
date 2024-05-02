@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeathBringer : Unit {
+public class MrLeshoon : Unit {
     private void Awake() {
         YPos = -1.39f;
         UnitName = "DeathBringer Sabry";
