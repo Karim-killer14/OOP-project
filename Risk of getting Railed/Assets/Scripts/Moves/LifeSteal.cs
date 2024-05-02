@@ -3,7 +3,7 @@
 class LifeSteal : Move {
     private float[] dmgValues = { 25, 25, 50 };
     private CameraShake camShake;
-    public LifeSteal(float dmgMult=1) : base("Life Steal", 5) {
+    public LifeSteal(float dmgMult=1) : base("Life Steal", 3) {
         camShake = Camera.main.GetComponent<CameraShake>();
 
         for (int i = 0; i < dmgValues.Length; i++) dmgValues[i] *= dmgMult;

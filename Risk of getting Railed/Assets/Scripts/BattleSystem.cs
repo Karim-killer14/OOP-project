@@ -20,7 +20,7 @@ public class BattleSystem : MonoBehaviour {
 
     Buff[][] buffs = new Buff[][] {
             new Buff[]{new UnlockHeavySwing()}, // sabry level
-            new Buff[]{new IncreaseDmg(50), new IncreaseMaxHP(70), new RngAttackDmg(40, 120)},
+            new Buff[]{new IncreaseDmg(60), new IncreaseMaxHP(60), new RngAttackDmg(50, 140)},
             new Buff[]{new UnlockFireSplash(), new UnlockFireStomp()}, // fire lord level
             new Buff[]{new IncreaseHeal(20),  new IncreaseShieldTurns(1)}, // king sewer
             new Buff[]{new IncreaseDmg(40), new IncreaseMaxHP(30)}, // death bringer

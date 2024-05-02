@@ -3195,6 +3195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3166954133627738260, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4470913314213301369, guid: fde1b7f942ea1c746bc904e4e199b0e2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3913,9 +3917,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478296270144446239, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4060235368003194481, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
       propertyPath: m_Name
       value: BuffScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060235368003194481, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7716326374595464428, guid: 600b2c5a4ce209d49b51b4df79023f9d, type: 3}
       propertyPath: m_LocalPosition.x
