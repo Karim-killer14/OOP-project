@@ -3,7 +3,7 @@ using UnityEngine;
 public class MrLeshoon : Unit {
     private void Awake() {
         YPos = -1.39f;
-        UnitName = "DeathBringer Sabry";
+        UnitName = "MrLeshoon";
         MaxHP = 700;
 
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
