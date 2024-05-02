@@ -4,7 +4,7 @@ public class Birdy : Unit {
     private void Awake() {
         YPos = -1.87f;
         UnitName = "Birdy Sabry";
-        MaxHP = 1000;
+        MaxHP = 1200;
         
         DifficultyProps diffProps = GameObject.Find("DIFFICULTY_PROPERTIES") ? GameObject.Find("DIFFICULTY_PROPERTIES").GetComponent<DifficultyProps>() : null;
         float dmgMult = diffProps ? diffProps.EnemyAtkMult : 1;
