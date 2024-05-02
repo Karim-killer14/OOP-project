@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Heal : Move {
-    public float heal = 40;
+    public float heal = 50;
 
     public Heal(float dmgMult = 1) : base("Heal", 2) {
         heal *= dmgMult;
