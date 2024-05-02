@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireStomp : Move {
     private AudioSource stompSnd;
-    private float damage = 30;
+    public float damage = 30;
 
     public FireStomp(AudioSource stompSnd, float dmgMult=1) : base("Fire Stomp", 0) {
         this.stompSnd = stompSnd;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnlockFireStomp : Buff {
 
     public UnlockFireStomp() {
-        desc = $"Unlock Fire Stomp";
+        desc = $"Unlock Fire Stomp (60 attack dmg, 1 turn cooldown)";
         title = "New Attack";
         type = "FireStomp";
     }
@@ -22,6 +22,10 @@ public class UnlockFireStomp : Buff {
             AudioSource newAudioSource = player.gameObject.AddComponent<AudioSource>();
             newAudioSource.clip = audioClip;
         }
-        player.Moves.Add(new FireStomp(player.gameObject.GetComponent<AudioSource>(), dmgMult));
+        FireStomp fireStomp = new FireStomp(player.gameObject.GetComponent<AudioSource>(), dmgMult) {
+            Cooldown = 1,
+            damage = 60 * dmgMult
+        };
+        player.Moves.Add(fireStomp);
     }
 }

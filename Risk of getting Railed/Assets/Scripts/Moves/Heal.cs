@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class Heal : Move {
-    private float heal = 40;
+    public float heal = 40;
 
-    public Heal(float dmgMult = 1) : base("Heal", 3) {
+    public Heal(float dmgMult = 1) : base("Heal", 2) {
         heal *= dmgMult;
     }
 

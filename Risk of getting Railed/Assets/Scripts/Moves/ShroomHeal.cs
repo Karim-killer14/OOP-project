@@ -2,7 +2,7 @@
 
 public class ShroomHeal : Move
 {
-    private float heal = 40;
+    private float heal = 30;
     public ShroomHeal(float dmgMult=1) : base("ShroomHeal", 4) { 
         heal *= dmgMult;
     }

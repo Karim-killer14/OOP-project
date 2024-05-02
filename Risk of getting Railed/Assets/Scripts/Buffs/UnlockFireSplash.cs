@@ -1,11 +1,10 @@
-
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnlockFireSplash : Buff {
 
     public UnlockFireSplash() {
-        desc = $"Unlock Fire Breathing (gives enemy burn effect that incraeses the damage you deal)";
+        desc = $"Unlock Fire Breathing (burns enemies increasing damage received for 2 turns)";
         title = "New Attack";
         type = "FireSplash";
     }

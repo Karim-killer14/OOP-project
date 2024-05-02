@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 public class FireSplash : Move {
-    private float damage = 20;
+    private float damage = 30;
     private AudioSource fireBreathSnd;
 
-    public FireSplash(AudioSource fireBreathSnd, float dmgMult=1) : base("Fire Splash", 5) {
+    public FireSplash(AudioSource fireBreathSnd, float dmgMult=1) : base("Fire Splash", 4) {
         this.fireBreathSnd = fireBreathSnd;
 
         damage *= dmgMult;

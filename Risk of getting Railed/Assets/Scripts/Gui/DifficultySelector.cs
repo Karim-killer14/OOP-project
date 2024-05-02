@@ -68,7 +68,7 @@ public class DifficultySelector : MonoBehaviour {
             diffProps.PlrAtkMult = 1;
         }
         else if (difficulty == 3) {
-            diffProps.EnemyAtkMult = 1.5f;
+            diffProps.EnemyAtkMult = 1.4f;
             diffProps.PlrAtkMult = 0.9f;
         }
     }

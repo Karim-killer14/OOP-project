@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Shield : Move {
     public int shield = 1;
-    public Shield(float dmgMult = 1) : base("Shield", 4) {
+    public Shield(float dmgMult = 1) : base("Shield", 3) {
         shield = (int)Math.Ceiling(shield * dmgMult);
     }
 
